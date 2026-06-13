@@ -247,9 +247,9 @@ const PROJECTS = [
   <p>Ce projet m'a permis de renforcer mes compétences en traitement de données, en analyse statistique et en interprétation de résultats. J'ai également développé ma maîtrise d'Excel pour la création de tableaux, de calculs et de visualisations, tout en travaillant en équipe sur l'ensemble du projet.</p>
   `,
   techs: ["Excel", "INSEE", "Analyse statistique", "Datavisualisation"],
-  cover : "assets/projet/but-sd1/Sae_demographie/couverture.png",
+  cover : "assets/projet/but-sd1/Sae_Demographie/couverture.png",
   photos: [
-    { src: "assets/projet/but-sd1/Sae_demographie/pyramide.png", caption: "Analyse démographique" },
+    { src: "assets/projet/but-sd1/Sae_Demographie/pyramide.png", caption: "Analyse démographique" },
   ],
   github: null,
   download: "assets/projet/but-sd1/Sae_Demographie/Sae-Demographie.pdf",
