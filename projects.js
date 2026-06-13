@@ -65,7 +65,7 @@ const PROJECTS = [
     {src: "assets/projet/but-sd1/Sae_indicateurs/excel.png", caption : "excel"},
   ],
   github: null,
-  download: "assets/projet/but-sd1/Sae_indicateurs/Construction_et_présentation_d_indicateurs_de_performance.zip",
+  download: "assets/projet/but-sd1/Sae_indicateurs/Construction et présentation d'indicateurs de performance.zip",
   downloadLabel: "Télécharger le dossier (.zip)",
   },
 
@@ -97,7 +97,7 @@ const PROJECTS = [
 
   ],
   github: null,
-  download: "assets/projet/but-sd1/Sae_regression/Sae_Regression_linéaire.zip",
+  download: "assets/projet/but-sd1/Sae_regression/Sae Regression linéaire.zip",
   downloadLabel: "Télécharger le projet (.zip)",
   },
 
