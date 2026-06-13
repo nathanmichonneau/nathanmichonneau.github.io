@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathan MICHONNEAU — À Propos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f0f4ff;--surface:#e8eeff;--card:#ffffff;--border:#c0d0f0;--accent:#1a4fcc;--accent2:#4a2ecc;--text:#0d1a33;--muted:#5a6a8a;--radius:12px;}
+    [data-theme="dark"]{--bg:#040810;--surface:#080e1a;--card:#0c1220;--border:#162040;--accent:#1a6bff;--accent2:#5b3dff;--text:#e2e8f0;--muted:#4a6080;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:1000;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(240,244,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:background .3s;}
+    [data-theme="dark"] nav{background:rgba(4,8,16,.85);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--accent);text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:2rem;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);padding:.4rem .7rem;border-radius:.4rem;font-size:.82rem;transition:all .2s;font-family:'Outfit',sans-serif;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .page-hero{padding:12rem 4rem 6rem;max-width:1100px;margin:0 auto;position:relative;}
+    .page-hero-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 50% 40% at 80% 20%,rgba(26,79,204,.09) 0%,transparent 60%);}
+    [data-theme="dark"] .page-hero-bg{background:radial-gradient(ellipse 50% 40% at 80% 20%,rgba(26,107,255,.07) 0%,transparent 60%);}
+    .page-hero-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .page-hero-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);line-height:.92;letter-spacing:.03em;margin-bottom:1.5rem;}
+    .page-hero-title span{display:block;-webkit-text-stroke:1px var(--accent);color:transparent;}
+    .page-hero-sub{color:var(--muted);font-size:1rem;line-height:1.8;max-width:55ch;}
+    .content-section{padding:5rem 4rem;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .section-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;margin-bottom:2.5rem;line-height:1;}
+    .timeline-big{position:relative;padding-left:3rem;}
+    .timeline-big::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);}
+    .tl-big-item{position:relative;margin-bottom:3.5rem;opacity:0;transform:translateX(-20px);transition:all .5s;}
+    .tl-big-item.visible{opacity:1;transform:translateX(0);}
+    .tl-big-dot{position:absolute;left:-2.6rem;top:.4rem;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);}
+    .tl-big-date{font-size:.72rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem;font-weight:500;}
+    .tl-big-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;transition:border-color .3s;}
+    .tl-big-card:hover{border-color:var(--accent);}
+    .tl-big-title{font-size:1.1rem;font-weight:600;margin-bottom:.4rem;}
+    .tl-big-sub{font-size:.82rem;color:var(--accent);margin-bottom:.8rem;font-weight:500;}
+    .tl-big-desc{font-size:.88rem;color:var(--muted);line-height:1.75;}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;}
+    .value-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:all .3s;opacity:0;transform:translateY(16px);}
+    .value-card.visible{opacity:1;transform:translateY(0);}
+    .value-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+    .value-icon{font-size:1.8rem;margin-bottom:.8rem;}
+    .value-title{font-size:.95rem;font-weight:600;margin-bottom:.4rem;}
+    .value-desc{font-size:.8rem;color:var(--muted);line-height:1.65;}
+
+    /* ── ATHLETICS SECTION ── */
+    .athletics-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s;}
+    .athletics-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
+    .athletics-card:hover{border-color:var(--accent);}
+    .athletics-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;}
+    .athletics-col-right{display:flex;flex-direction:column;gap:1.5rem;}
+    .athletics-photo{border-radius:var(--radius);overflow:hidden;border:2px solid var(--border);background:var(--surface);height:480px;display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;transition:border-color .3s;padding:0;}
+    .athletics-photo:hover{border-color:var(--accent);}
+    .athletics-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:calc(var(--radius) - 2px);display:block;}
+    .athletics-photo-placeholder{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+    .athletics-photo-icon{font-size:2.2rem;}
+    .athletics-photo-label{font-size:.75rem;line-height:1.6;}
+    .athletics-photo-label code{display:block;margin-top:.4rem;background:var(--card);border:1px solid var(--border);padding:.2rem .5rem;border-radius:.25rem;font-size:.68rem;font-family:monospace;}
+    .athletics-perf{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
+    .perf-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;text-align:center;transition:border-color .3s;}
+    .perf-box:hover{border-color:var(--accent);}
+    .perf-time{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--accent);letter-spacing:.04em;line-height:1;}
+    .perf-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
+    .perf-level{font-size:.7rem;color:var(--accent);font-weight:500;margin-top:.2rem;}
+    .club-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(26,79,204,.07);border:1px solid rgba(26,79,204,.2);color:var(--accent);font-size:.78rem;font-weight:500;padding:.5rem 1.1rem;border-radius:2rem;margin-bottom:1rem;}
+    [data-theme="dark"] .club-badge{background:rgba(26,107,255,.1);}
+    .athletics-desc{font-size:.88rem;color:var(--muted);line-height:1.8;}
+    .athletics-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;}
+    .athl-tag{padding:.3rem .8rem;border-radius:2rem;font-size:.73rem;font-weight:500;border:1px solid var(--border);color:var(--muted);transition:all .3s;}
+    .athl-tag:hover{border-color:var(--accent);color:var(--accent);}
+    .athl-competences{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);}
+    .athl-comp-title{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;}
+    .athl-comp-title::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;}
+    .athl-comp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;}
+    .athl-comp-item{display:flex;align-items:flex-start;gap:.65rem;padding:.85rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color .25s,transform .25s;}
+    .athl-comp-item:hover{border-color:var(--accent);transform:translateY(-2px);}
+    .athl-comp-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
+    .athl-comp-label{font-size:.78rem;color:var(--muted);line-height:1.5;}
+    .athl-comp-label strong{display:block;font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:.12rem;}
+
+    /* ── BÉNÉVOLAT ── */
+    .benevole-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s;opacity:0;transform:translateY(16px);}
+    .benevole-card.visible{opacity:1;transform:translateY(0);}
+    .benevole-card:hover{border-color:var(--accent);}
+    .benevole-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;}
+    .benevole-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+    .benevole-icon{width:44px;height:44px;border-radius:10px;background:rgba(26,79,204,.1);border:1px solid rgba(26,79,204,.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+    .benevole-org{font-size:.95rem;font-weight:600;}
+    .benevole-role{font-size:.75rem;color:var(--accent);font-weight:500;}
+    .benevole-desc{font-size:.83rem;color:var(--muted);line-height:1.7;}
+    .benevole-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
+    .benevole-pill{background:rgba(26,79,204,.06);border:1px solid rgba(26,79,204,.15);color:var(--accent);font-size:.68rem;padding:.2rem .6rem;border-radius:.25rem;letter-spacing:.04em;}
+    [data-theme="dark"] .benevole-pill{background:rgba(26,107,255,.07);}
+
+    /* ── BILAN ── */
+    .bilan-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:2rem;}
+    .bilan-tabs{display:flex;border-bottom:1px solid var(--border);}
+    .bilan-tab{padding:1rem 2rem;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:none;background:none;font-family:'Outfit',sans-serif;transition:all .2s;position:relative;}
+    .bilan-tab.active{color:var(--accent);}
+    .bilan-tab.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);}
+    .bilan-tab.locked{opacity:.4;}
+    .bilan-tab:not(.locked):hover{color:var(--accent);}
+    .bilan-content{padding:2.5rem;}
+    .bilan-panel{display:none;}
+    .bilan-panel.active{display:block;}
+    .bilan-year-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(26,79,204,.07);border:1px solid rgba(26,79,204,.2);color:var(--accent);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2rem;margin-bottom:1.5rem;}
+    .bilan-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.04em;margin-bottom:1rem;}
+    .bilan-text{font-size:.9rem;color:var(--muted);line-height:1.85;max-width:65ch;}
+    .bilan-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1.8rem;}
+    .bilan-hi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.1rem;text-align:center;}
+    .bilan-hi-icon{font-size:1.4rem;margin-bottom:.4rem;}
+    .bilan-hi-label{font-size:.78rem;color:var(--muted);line-height:1.5;}
+    .bilan-locked-msg{text-align:center;padding:3rem;color:var(--muted);}
+    .bilan-locked-msg span{display:block;font-size:2rem;margin-bottom:.8rem;}
+    .bilan-locked-msg p{font-size:.88rem;font-style:italic;}
+
+    .interests-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1.5rem;}
+    .interest-pill{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;text-align:center;font-size:.85rem;color:var(--muted);transition:all .3s;}
+    .interest-pill:hover{border-color:var(--accent);color:var(--text);}
+    .interest-pill .int-icon{font-size:1.6rem;display:block;margin-bottom:.5rem;}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
+    footer span{color:var(--accent);}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}.nav-links{gap:1.2rem;}
+      .nav-links li:nth-child(3),.nav-links li:nth-child(4){display:none;}
+      .page-hero,.content-section{padding-left:1.5rem;padding-right:1.5rem;}
+      .athletics-grid{grid-template-columns:1fr;}
+      .athl-comp-grid{grid-template-columns:1fr 1fr;}
+      .athletics-photo{height:320px;}
+      footer{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-hero-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-logo">NM</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html" class="active">À propos</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeBtn">☾</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">01 — À propos</div>
+    <h1 class="page-hero-title">MON<span>PARCOURS</span></h1>
+    <p class="page-hero-sub">Originaire de Saint-Amand-sur-Sèvre (79700) et née le 23 août 2007, je suis étudiant en BUT Science des Données à l'université de Niort. Curieux et rigoureux, je développe progressivement mes compétences en analyse de données, statistiques et informatique. Découvrez mon parcours, mes valeurs et les ambitions qui me poussent à progresser chaque jour.. Voici mon histoire, mes valeurs et ce qui me motive chaque jour.</p>
+  </div>
+
+  <!-- FORMATION -->
+   
+  <div class="content-section">
+    <div class="section-label">Formation</div>
+    <h2 class="section-title">Ma Timeline</h2>
+    <div class="timeline-big">
+      <div class="tl-big-item">
+        <div class="tl-big-dot" style="background:transparent;border:1px dashed var(--muted);box-shadow:none;"></div>
+        <div class="tl-big-date">2026 — 2028</div>
+        <div class="tl-big-card" style="border-style:dashed;">
+          <div class="tl-big-title">Alternance / Stage</div>
+          <div class="tl-big-sub">Opportunité recherchée</div>
+          <div class="tl-big-desc">Actuellement à la recherche d'une opportunité en science des données. Je suis motivé, curieux et prêt à apporter ma contribution dans un environnement stimulant.</div>
+      </div>
+      </div>
+      <div class="tl-big-item">
+        <div class="tl-big-dot"></div>
+        <div class="tl-big-date">2025 — Aujourd'hui</div>
+        <div class="tl-big-card">
+          <div class="tl-big-title">BUT Science des Données — SD1</div>
+          <div class="tl-big-sub">IUT de Niort · Niort, France</div>
+          <div class="tl-big-desc">Formation universitaire de 3 ans axée sur l'analyse et la visualisation de données (Power BI, Tableau +), les  statistiques, la programmation (Python, SQL, R, SAS) et la gestion de projets informatiques. Apprentissage de méthodes agiles et outils modernes du développement logiciel.</div>
+        </div>
+      </div>
+      <div class="tl-big-item">
+        <div class="tl-big-dot" style="background:var(--accent2);box-shadow:0 0 14px var(--accent2);"></div>
+        <div class="tl-big-date">2022 — 2025</div>
+        <div class="tl-big-card">
+          <div class="tl-big-title">Baccalauréat Général</div>
+          <div class="tl-big-sub">Spécialités Physique-chimie & NSI</div>
+          <div class="tl-big-desc">Obtention du baccalauréat général avec les spécialités Physique-Chimie et Numérique & Sciences Informatiques (NSI). Initiation à la programmation Python, aux algorithmes et à la logique informatique.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BILAN -->
+  <div class="content-section" style="padding-top:2rem;">
+    <div class="section-label">Rétrospective</div>
+    <h2 class="section-title">Bilan par Année</h2>
+    <div class="bilan-section">
+      <div class="bilan-tabs">
+        <button class="bilan-tab active" onclick="switchBilan('an1',this)">1ère Année</button>
+        <button class="bilan-tab locked" onclick="return false" title="À venir">2ème Année 🔒</button>
+        <button class="bilan-tab locked" onclick="return false" title="À venir">3ème Année 🔒</button>
+      </div>
+      <div class="bilan-content">
+        <!-- AN 1 -->
+        <div class="bilan-panel active" id="bilan-an1">
+          <div class="bilan-year-badge">
+            <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>
+            2024 — 2025
+          </div>
+          <div class="bilan-title">Première Année BUT SD</div>
+          <p class="bilan-text">
+            Cette première année en BUT Science des Données à Niort a été une étape importante. Elle m'a permis de gagner en autonomie tout en découvrant un domaine qui me plaît réellement. En arrivant à Niort, j'ai dû apprendre à vivre seul en appartement, un changement auquel je me suis rapidement adapté, facilité par de belles rencontres au sein de la promotion.
+          </p>
+          <p class="bilan-text" style="margin-top:1rem;">
+            Durant le premier semestre, tout s'est déroulé dans de bonnes conditions. Grâce à ma spécialité NSI au lycée, j'avais déjà des bases solides en programmation, ce qui m'a permis d'être plus à l'aise dans certaines matières et d'aider mes camarades. J'ai obtenu de bons résultats et je suis resté très impliqué.
+          </p>
+          <p class="bilan-text" style="margin-top:1rem;">
+            Le second semestre a apporté des enseignements plus variés et techniques. J'ai toutefois connu une période de relâchement entre mars et avril, que j'ai su identifier et corriger dès mai. La participation à des projets comme le concours Dataviz a joué un rôle clé dans mon regain de motivation.
+          </p>
+          <p class="bilan-text" style="margin-top:1rem;">
+            Avec le recul, je suis très satisfait de cette année. J'aborde la deuxième année avec confiance, motivation et l'envie de continuer à progresser. Je poursuis également activement mes recherches d'alternance.
+          </p>
+          <div class="bilan-highlights">
+            <div class="bilan-hi"><div class="bilan-hi-icon">🏠</div><div class="bilan-hi-label">Vie autonome en appartement à Niort</div></div>
+            <div class="bilan-hi"><div class="bilan-hi-icon">📈</div><div class="bilan-hi-label">Bons résultats sur les deux semestres</div></div>
+            <div class="bilan-hi"><div class="bilan-hi-icon">🏆</div><div class="bilan-hi-label">Concours Dataviz</div></div>
+            <div class="bilan-hi"><div class="bilan-hi-icon">🔍</div><div class="bilan-hi-label">Recherche active d'alternance</div></div>
+          </div>
+        </div>
+        <!-- AN 2 -->
+        <div class="bilan-panel" id="bilan-an2">
+          <div class="bilan-locked-msg">
+            <span>🔒</span>
+            <p>Le bilan de 2ème année sera disponible à la fin de l'année universitaire 2025–2026.</p>
+          </div>
+        </div>
+        <!-- AN 3 -->
+        <div class="bilan-panel" id="bilan-an3">
+          <div class="bilan-locked-msg">
+            <span>🔒</span>
+            <p>Le bilan de 3ème année sera disponible à la fin de l'année universitaire 2026–2027.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATHLÉTISME -->
+  <div class="content-section" style="padding-top:2rem;">
+    <div class="section-label">Sport</div>
+    <h2 class="section-title">Athlétisme en Club</h2>
+    <div class="athletics-card">
+      <div class="athletics-grid">
+        <!-- COLONNE GAUCHE : infos + perfs -->
+        <div>
+          <div class="club-badge">🏃 SBAC — Sèvre Bocage Athlétique Club</div>
+          <p class="athletics-desc">
+            Pratique de l'athlétisme en compétition depuis <strong>8 ans</strong> au sein du SBAC (Sèvre Bocage Athlétique Club) basé à Bressuire (79300), club de <strong>450 licenciés</strong>.
+            Je me spécialise sur les épreuves de demi-fond avec un niveau interrégional.
+          </p>
+          <div class="athletics-tags">
+            <span class="athl-tag">⏱ 400m</span>
+            <span class="athl-tag">⏱ 800m</span>
+            <span class="athl-tag">🏆 Niveau interrégional</span>
+            <span class="athl-tag">8 ans de pratique</span>
+            <span class="athl-tag">En compétition</span>
+          </div>
+
+          <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-top:2rem;margin-bottom:1rem;">Performances personnelles</p>
+          <div class="athletics-perf">
+            <div class="perf-box">
+              <div class="perf-time">52s</div>
+              <div class="perf-label">400 mètres</div>
+              <div class="perf-level">Niveau interrégional</div>
+            </div>
+            <div class="perf-box">
+              <div class="perf-time">2'02</div>
+              <div class="perf-label">800 mètres</div>
+              <div class="perf-level">Niveau interrégional</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLONNE DROITE : photo + compétences -->
+        <div class="athletics-col-right">
+          <div class="athletics-photo">
+            <img src="assets/athletisme.jpg" alt="Athlétisme en compétition"/>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Compétences développées — pleine largeur -->
+      <div class="athl-competences">
+        <div class="athl-comp-title">Ce que 8 ans de compétition m'ont appris</div>
+        <div class="athl-comp-grid">
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">🎯</div>
+            <div class="athl-comp-label"><strong>Dépassement de soi</strong>Se fixer des objectifs et tout mettre en œuvre pour les atteindre.</div>
+          </div>
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">⏳</div>
+            <div class="athl-comp-label"><strong>Gestion de l'effort</strong>Doser son énergie, anticiper, tenir sous pression.</div>
+          </div>
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">🧠</div>
+            <div class="athl-comp-label"><strong>Rigueur & régularité</strong>Maintenir un rythme constant sur le long terme.</div>
+          </div>
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">💪</div>
+            <div class="athl-comp-label"><strong>Résilience</strong>Rebondir après les contre-performances et progresser.</div>
+          </div>
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">🤝</div>
+            <div class="athl-comp-label"><strong>Esprit collectif</strong>S'intégrer dans un club de 450 licenciés.</div>
+          </div>
+          <div class="athl-comp-item">
+            <div class="athl-comp-icon">🗓</div>
+            <div class="athl-comp-label"><strong>Organisation</strong>Concilier sport, études et vie associative.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BÉNÉVOLAT -->
+  <div class="content-section" style="padding-top:2rem;">
+    <div class="section-label">Engagement</div>
+    <h2 class="section-title">Bénévolat & Vie Associative</h2>
+    <div class="benevole-grid">
+      <div class="benevole-card">
+        <div class="benevole-header">
+          <div class="benevole-icon">🤝</div>
+          <div>
+            <div class="benevole-org">SBAC — Sèvre Bocage Athlétique Club</div>
+            <div class="benevole-role">Bénévole · 4 ans d'engagement</div>
+          </div>
+        </div>
+        <p class="benevole-desc">
+          Engagement bénévole actif au sein du club depuis 4 ans. Club de 450 licenciés basé à Bressuire (79300). Participation à l'organisation des manifestations sportives, à la communication du club et à la gestion de la boutique.
+        </p>
+        <div class="benevole-pills">
+          <span class="benevole-pill">Manifestations sportives</span>
+          <span class="benevole-pill">Communication</span>
+          <span class="benevole-pill">Gestion boutique</span>
+          <span class="benevole-pill">Mise en avant produits</span>
+        </div>
+      </div>
+      <div class="benevole-card">
+        <div class="benevole-header">
+          <div class="benevole-icon">🏪</div>
+          <div>
+            <div class="benevole-org">Boutique du Club</div>
+            <div class="benevole-role">Gestion & Communication</div>
+          </div>
+        </div>
+        <p class="benevole-desc">
+          Responsable de la mise en avant des produits de la boutique du SBAC : présentation des articles, communication sur les réseaux, contribution à l'image du club auprès des licenciés et du grand public.
+        </p>
+        <div class="benevole-pills">
+          <span class="benevole-pill">Merchandising</span>
+          <span class="benevole-pill">Réseaux sociaux</span>
+          <span class="benevole-pill">Image de marque</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALEURS -->
+  <div class="content-section" style="padding-top:2rem;">
+    <div class="section-label">Personnalité</div>
+    <h2 class="section-title">Valeurs & Traits</h2>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon">🔍</div><div class="value-title">Curieux</div><div class="value-desc">Toujours en quête d'apprentissage, j'explore de nouvelles technologies et concepts avec enthousiasme.</div></div>
+      <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Ambitieux</div><div class="value-desc">Je me fixe des objectifs élevés et m'y tiens, en cherchant constamment à progresser et à dépasser mes limites.</div></div>
+      <div class="value-card"><div class="value-icon">⚡</div><div class="value-title">Rigoureux</div><div class="value-desc">Chaque détail compte. Je traite mes projets avec méthode et attention pour garantir un résultat de qualité.</div></div>
+      <div class="value-card"><div class="value-icon">🎨</div><div class="value-title">Créatif</div><div class="value-desc">J'aborde les problèmes sous un angle original, en cherchant des solutions innovantes et esthétiques.</div></div>
+      <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">À l'écoute</div><div class="value-desc">Savoir écouter est une force. Je suis attentif aux besoins des autres pour mieux collaborer et m'adapter.</div></div>
+      <div class="value-card"><div class="value-icon">🌱</div><div class="value-title">Autonome</div><div class="value-desc">Capable de travailler de manière indépendante, je prends des initiatives tout en restant aligné sur les objectifs.</div></div>
+    </div>
+  </div>
+
+  <!-- CENTRES D'INTÉRÊT -->
+  <div class="content-section" style="padding-top:2rem;">
+    <div class="section-label">Passions</div>
+    <h2 class="section-title">Centres d'Intérêt</h2>
+    <div class="interests-grid">
+      <div class="interest-pill"><span class="int-icon">🏃</span>Athlétisme (SBAC)</div>
+      <div class="interest-pill"><span class="int-icon">💻</span>Développement Web</div>
+      <div class="interest-pill"><span class="int-icon">📊</span>Data Science</div>
+      <div class="interest-pill"><span class="int-icon">🤖</span>Intelligence Artificielle</div>
+      <div class="interest-pill"><span class="int-icon">🤝</span>Bénévolat / Vie associative</div>
+      <div class="interest-pill"><span class="int-icon">🎵</span>Musique</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>© 2026 <span>Nathan MICHONNEAU</span></div>
+    <div>BUT Science des Données - IUT de Niort</div>
+  </footer>
+
+  <script>
+    // Theme
+    const themeBtn=document.getElementById('themeBtn'),html=document.documentElement;
+    const saved=localStorage.getItem('theme')||'light';
+    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀':'☾';
+    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀':'☾';});
+
+    // Scroll reveal
+    const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*100);});},{threshold:.12});
+    document.querySelectorAll('.tl-big-item,.value-card,.benevole-card').forEach(el=>obs.observe(el));
+
+    // Bilan tabs
+    function switchBilan(year, btn) {
+      document.querySelectorAll('.bilan-tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.bilan-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('bilan-'+year).classList.add('active');
+    }
+  </script>
+</body>
+</html>

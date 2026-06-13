@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathan MICHONNEAU — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f0f4ff;--surface:#e8eeff;--card:#ffffff;--border:#c0d0f0;--accent:#1a4fcc;--accent2:#4a2ecc;--text:#0d1a33;--muted:#5a6a8a;--radius:12px;}
+    [data-theme="dark"]{--bg:#040810;--surface:#080e1a;--card:#0c1220;--border:#162040;--accent:#1a6bff;--accent2:#5b3dff;--text:#e2e8f0;--muted:#4a6080;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:1000;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(240,244,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:background .3s;}
+    [data-theme="dark"] nav{background:rgba(4,8,16,.85);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--accent);text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:2rem;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);padding:.4rem .7rem;border-radius:.4rem;font-size:.82rem;transition:all .2s;font-family:'Outfit',sans-serif;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .page-hero{padding:12rem 4rem 5rem;max-width:900px;margin:0 auto;position:relative;z-index:1;}
+    .page-hero-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(26,79,204,.1) 0%,transparent 60%),radial-gradient(ellipse 30% 40% at 80% 70%,rgba(74,46,204,.05) 0%,transparent 60%);}
+    [data-theme="dark"] .page-hero-bg{background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(26,107,255,.08) 0%,transparent 60%);}
+    .page-hero-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .page-hero-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);line-height:.92;letter-spacing:.03em;margin-bottom:1.5rem;}
+    .page-hero-title span{display:block;-webkit-text-stroke:1px var(--accent);color:transparent;}
+    .page-hero-sub{color:var(--muted);font-size:1rem;line-height:1.8;max-width:55ch;}
+    .content-section{padding:4rem 4rem;max-width:960px;margin:0 auto;position:relative;z-index:1;}
+    .section-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;margin-bottom:2rem;line-height:1;}
+
+    /* Contact card */
+    .contact-big{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:4rem;text-align:center;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);transition:all .6s;}
+    .contact-big.visible{opacity:1;transform:translateY(0);}
+    .contact-big::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
+    .contact-big-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(26,79,204,.08);border:1px solid rgba(26,79,204,.22);color:var(--accent);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .9rem;border-radius:2rem;margin-bottom:1.5rem;}
+    [data-theme="dark"] .contact-big-tag{background:rgba(26,107,255,.1);}
+    .contact-big h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;margin-bottom:1rem;}
+    .contact-big p{color:var(--muted);line-height:1.8;max-width:50ch;margin:0 auto 2.5rem;}
+    .contact-email-big{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:clamp(1.2rem,3vw,2rem);letter-spacing:.06em;color:var(--accent);text-decoration:none;margin-bottom:3rem;transition:opacity .2s;word-break:break-all;}
+    .contact-email-big:hover{opacity:.7;}
+    .social-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem;}
+    .social-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;text-decoration:none;color:var(--muted);transition:all .25s;}
+    .social-card:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);}
+    .social-card-icon{font-size:1.8rem;margin-bottom:.6rem;display:block;}
+    .social-card-name{font-size:.88rem;font-weight:600;margin-bottom:.2rem;color:var(--text);}
+    .social-card-handle{font-size:.75rem;}
+    .avail-block{background:rgba(26,79,204,.05);border:1px solid rgba(26,79,204,.18);border-radius:var(--radius);padding:1.5rem 2rem;display:flex;align-items:center;gap:1rem;opacity:0;transform:translateY(12px);transition:all .5s .2s;}
+    [data-theme="dark"] .avail-block{background:rgba(26,107,255,.06);border-color:rgba(26,107,255,.2);}
+    .avail-block.visible{opacity:1;transform:translateY(0);}
+    .avail-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;flex-shrink:0;animation:blink 2s ease-in-out infinite;}
+    .avail-text{font-size:.88rem;color:var(--muted);line-height:1.6;}
+    .avail-text strong{color:var(--text);}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* ── CV SECTION ── */
+    .cv-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;opacity:0;transform:translateY(20px);transition:all .6s .1s;}
+    .cv-section.visible{opacity:1;transform:translateY(0);}
+    .cv-section-top{padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-bottom:1px solid var(--border);}
+    .cv-section-top::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
+    .cv-info{display:flex;align-items:center;gap:1rem;}
+    .cv-icon{width:48px;height:48px;background:rgba(26,79,204,.1);border:1px solid rgba(26,79,204,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+    .cv-name{font-size:1rem;font-weight:600;margin-bottom:.2rem;}
+    .cv-meta{font-size:.78rem;color:var(--muted);}
+    .cv-actions{display:flex;gap:.7rem;flex-wrap:wrap;}
+    .btn-cv{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:.4rem;font-size:.82rem;font-weight:500;font-family:'Outfit',sans-serif;text-decoration:none;transition:all .25s;}
+    .btn-cv-dl{background:var(--accent);color:#fff;}
+    .btn-cv-dl:hover{opacity:.85;transform:translateY(-2px);}
+    .btn-cv-view{border:1px solid var(--border);color:var(--text);}
+    .btn-cv-view:hover{border-color:var(--accent);transform:translateY(-2px);}
+
+    /* CV Viewer */
+    .cv-viewer{background:var(--surface);border-top:1px solid var(--border);display:none;}
+    .cv-viewer.open{display:block;}
+    .cv-viewer-inner{padding:2rem;display:flex;justify-content:center;}
+    /* CV placeholder — à remplacer par un <iframe> ou <embed> pointant vers votre PDF */
+    .cv-placeholder{width:100%;max-width:700px;aspect-ratio:210/297;background:var(--card);border:1px dashed var(--border);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--muted);text-align:center;padding:3rem;}
+    .cv-placeholder-icon{font-size:3rem;}
+    .cv-placeholder-title{font-size:1rem;font-weight:600;color:var(--text);}
+    .cv-placeholder-desc{font-size:.82rem;line-height:1.7;max-width:38ch;}
+    .cv-placeholder code{background:var(--surface);border:1px solid var(--border);padding:.15rem .4rem;border-radius:.25rem;font-size:.78rem;font-family:monospace;}
+
+    /* Réel iframe CV (affiché si le fichier existe) */
+    .cv-iframe{width:100%;max-width:700px;height:900px;border:none;border-radius:8px;display:block;}
+
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
+    footer span{color:var(--accent);}
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}.nav-links{gap:1.2rem;}
+      .nav-links li:nth-child(3),.nav-links li:nth-child(4){display:none;}
+      .page-hero,.content-section{padding-left:1.5rem;padding-right:1.5rem;}
+      .contact-big{padding:2rem;}
+      .cv-section-top{flex-direction:column;align-items:flex-start;}
+      footer{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-hero-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-logo">NM</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeBtn">☾</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">04 — Contact</div>
+    <h1 class="page-hero-title">DISCUTONS<span>ENSEMBLE</span></h1>
+    <p class="page-hero-sub">Vous avez un projet, une opportunité ou juste envie d'échanger ? Je suis disponible et réactif. N'hésitez pas à me contacter !</p>
+  </div>
+
+  <div class="content-section">
+    <!-- Contact principal -->
+    <div class="contact-big">
+      <div class="contact-big-tag">
+        <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.5s infinite;display:inline-block;"></span>
+        Disponible pour un stage / alternance
+      </div>
+      <h2>Prêt à collaborer</h2>
+      <p>Étudiant en BUT Science des Données à l'IUT de Niort, je suis ouvert à toute opportunité de stage, d'alternance ou de collaboration sur des projets data & web.</p>
+      <a href="mailto:nathanmichonneau79@gmail.com" class="contact-email-big">nathanmichonneau79@gmail.com</a>
+      <div class="social-cards">
+        <a href="mailto:nathanmichonneau79@gmail.com" class="social-card">
+          <span class="social-card-icon">📧</span>
+          <div class="social-card-name">Email</div>
+          <div class="social-card-handle">nathanmichonneau79@gmail.com</div>
+        </a>
+        <a href="https://github.com/nathanmichonneau" target="_blank" rel="noopener" class="social-card">
+          <span class="social-card-icon">🐙</span>
+          <div class="social-card-name">GitHub</div>
+          <div class="social-card-handle">@nathanmichonneau</div>
+        </a>
+        <a href="https://linkedin.com/in/nathanmichonneau" target="_blank" rel="noopener" class="social-card">
+          <span class="social-card-icon">💼</span>
+          <div class="social-card-name">LinkedIn</div>
+          <div class="social-card-handle">Nathan Michonneau</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Disponibilité -->
+    <div class="avail-block" style="margin-top:1.5rem;">
+      <div class="avail-dot"></div>
+      <div class="avail-text">
+        <strong>Actuellement disponible</strong> — À la recherche d'un stage ou d'une alternance en développement web ou science des données pour 2026/2028.
+      </div>
+    </div>
+  </div>
+
+  <!-- CV SECTION -->
+  <div class="content-section" style="padding-top:1rem;">
+    <div class="section-label">Curriculum Vitae</div>
+    <h2 class="section-title">Mon CV</h2>
+
+    <div class="cv-section" id="cvSection">
+      <div class="cv-section-top">
+        <div class="cv-info">
+          <div class="cv-icon">📄</div>
+          <div>
+            <div class="cv-name">Curriculum vitae - Nathan Michonneau</div>
+            <div class="cv-meta">BUT Science des Données · IUT de Niort · 2026</div>
+          </div>
+        </div>
+        <div class="cv-actions">
+          <button class="btn-cv btn-cv-view" onclick="toggleCV()">
+            <span id="viewBtnIcon">👁</span> <span id="viewBtnLabel">Voir le CV</span>
+          </button>
+          <a href="assets/Curriculum vitae Nathan Michonneau.pdf" download="Curriculum vitae Nathan Michonneau.pdf" class="btn-cv btn-cv-dl">
+            ⬇ Télécharger le CV (.pdf)
+          </a>
+        </div>
+      </div>
+
+      <!-- Viewer CV -->
+      <div class="cv-viewer" id="cvViewer">
+        <div class="cv-viewer-inner">
+          <div class="cv-placeholder">
+            │  <iframe                                                    │
+            │    src="assets/Curriculum vitae Nathan Michonneau.pdf"                    │
+            │    class="cv-iframe"                                        │
+            │    title="Curriculum vitae Nathan MICHONNEAU">                            │
+            │  </iframe>   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 <span>Nathan MICHONNEAU</span></div>
+    <div>BUT Science des Données — IUT de Niort</div>
+  </footer>
+
+  <script>
+    // Theme
+    const themeBtn=document.getElementById('themeBtn'),html=document.documentElement;
+    const saved=localStorage.getItem('theme')||'light';
+    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀':'☾';
+    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀':'☾';});
+
+    // Scroll reveal
+    const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+    document.querySelectorAll('.contact-big,.avail-block,.cv-section').forEach(el=>obs.observe(el));
+
+    // CV toggle
+    let cvOpen=false;
+    function toggleCV(){
+      cvOpen=!cvOpen;
+      document.getElementById('cvViewer').classList.toggle('open',cvOpen);
+      document.getElementById('viewBtnIcon').textContent=cvOpen?'✕':'👁';
+      document.getElementById('viewBtnLabel').textContent=cvOpen?'Fermer':'Voir le CV';
+      if(cvOpen) document.getElementById('cvSection').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathan MICHONNEAU — Compétences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f0f4ff;--surface:#e8eeff;--card:#ffffff;--border:#c0d0f0;--accent:#1a4fcc;--accent2:#4a2ecc;--text:#0d1a33;--muted:#5a6a8a;--radius:12px;}
+    [data-theme="dark"]{--bg:#040810;--surface:#080e1a;--card:#0c1220;--border:#162040;--accent:#1a6bff;--accent2:#5b3dff;--text:#e2e8f0;--muted:#4a6080;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;overflow-x:hidden;transition:background .3s,color .3s;}
+    
+    
+    
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:1000;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(240,244,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:background .3s;}
+    [data-theme="dark"] nav{background:rgba(4,8,16,.85);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--accent);text-decoration:none;}
+    .nav-right{display:flex;align-items:center;gap:2rem;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);padding:.4rem .7rem;border-radius:.4rem;font-size:.82rem;transition:all .2s;font-family:'Outfit',sans-serif;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .page-hero{padding:12rem 4rem 5rem;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .page-hero-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 50% 40% at 20% 30%,rgba(26,79,204,.09) 0%,transparent 60%);}
+    [data-theme="dark"] .page-hero-bg{background:radial-gradient(ellipse 50% 40% at 20% 30%,rgba(26,107,255,.07) 0%,transparent 60%);}
+    .page-hero-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .page-hero-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,7rem);line-height:.92;letter-spacing:.03em;margin-bottom:1.5rem;}
+    .page-hero-title span{display:block;-webkit-text-stroke:1px var(--accent);color:transparent;}
+    .page-hero-sub{color:var(--muted);font-size:1rem;line-height:1.8;max-width:55ch;}
+    .content-section{padding:4rem 4rem;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+    .section-label{display:flex;align-items:center;gap:1rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:500;}
+    .section-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:120px;}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;margin-bottom:2.5rem;line-height:1;}
+    .skills-full-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+    .skill-block{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;opacity:0;transform:translateY(16px);transition:all .5s;}
+    .skill-block.visible{opacity:1;transform:translateY(0);}
+    .skill-block:hover{border-color:var(--accent);}
+    .skill-group-title{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;font-weight:500;display:flex;align-items:center;gap:.6rem;}
+    .skill-group-title::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);}
+    .skill-bar-wrap{margin-bottom:1.4rem;}
+    .skill-bar-head{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.5rem;align-items:center;}
+    .skill-bar-head span:last-child{color:var(--accent);font-size:.78rem;font-weight:500;}
+    .skill-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;}
+    .skill-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem;}
+    .tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;text-align:center;transition:all .3s;opacity:0;transform:scale(.95);}
+    .tool-card.visible{opacity:1;transform:scale(1);}
+    .tool-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+    .tool-name{font-size:.88rem;font-weight:500;margin-bottom:.3rem;}
+    .tool-level{font-size:.72rem;color:var(--muted);}
+    .tool-bar{height:3px;background:var(--border);border-radius:99px;overflow:hidden;margin-top:.6rem;}
+    .tool-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+    .langs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;}
+    .lang-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:all .3s;opacity:0;transform:translateY(12px);}
+    .lang-card.visible{opacity:1;transform:translateY(0);}
+    .lang-card:hover{border-color:var(--accent);}
+    .lang-flag{font-size:2rem;margin-bottom:.7rem;display:block;}
+    .lang-name{font-size:1rem;font-weight:600;margin-bottom:.3rem;}
+    .lang-level{font-size:.78rem;color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:.08em;}
+    .lang-desc{font-size:.78rem;color:var(--muted);margin-top:.4rem;}
+    footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted);letter-spacing:.04em;}
+    footer span{color:var(--accent);}
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}.nav-links{gap:1.2rem;}
+      .nav-links li:nth-child(3),.nav-links li:nth-child(4){display:none;}
+      .page-hero,.content-section{padding-left:1.5rem;padding-right:1.5rem;}
+      .skills-full-grid{grid-template-columns:1fr;}
+      footer{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-hero-bg"></div>
+  <nav>
+    <a href="index.html" class="nav-logo">NM</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="competences.html" class="active">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeBtn">☾</button>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">02 — Compétences</div>
+    <h1 class="page-hero-title">HARD &<span>SOFT SKILLS</span></h1>
+    <p class="page-hero-sub">Un aperçu honnête de mes compétences techniques et humaines, construites au fil de ma formation et de mes projets personnels.</p>
+  </div>
+
+  <div class="content-section">
+    <div class="section-label">Compétences</div>
+    <h2 class="section-title">Mes Skills</h2>
+    <div class="skills-full-grid">
+      <div class="skill-block">
+        <div class="skill-group-title">Hard Skills — Langages</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>HTML / CSS</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Python</span><span>60%</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>SQL</span><span>55%</span></div><div class="skill-bar"><div class="skill-fill" data-width="55"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>JavaScript</span><span>45%</span></div><div class="skill-bar"><div class="skill-fill" data-width="45"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>PHP</span><span>40%</span></div><div class="skill-bar"><div class="skill-fill" data-width="40"></div></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-group-title">Soft Skills — Humains</div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Travail en équipe</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Écoute active</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Créativité</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Communication</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Gestion du temps</span><span>70%</span></div><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section" style="padding-top:1rem;">
+    <div class="section-label">Outils</div>
+    <h2 class="section-title">Environnement de Travail</h2>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-name">VS Code</div><div class="tool-level">Éditeur principal</div><div class="tool-bar"><div class="tool-fill" data-width="85"></div></div></div>
+      <div class="tool-card"><div class="tool-name">Excel</div><div class="tool-level">Analyse de données</div><div class="tool-bar"><div class="tool-fill" data-width="70"></div></div></div>
+      <div class="tool-card"><div class="tool-name">Git</div><div class="tool-level">Versioning</div><div class="tool-bar"><div class="tool-fill" data-width="55"></div></div></div>
+      <div class="tool-card"><div class="tool-name">Sphinx</div><div class="tool-level">Documentation</div><div class="tool-bar"><div class="tool-fill" data-width="45"></div></div></div>
+      <div class="tool-card"><div class="tool-name">GitHub</div><div class="tool-level">Collaboration</div><div class="tool-bar"><div class="tool-fill" data-width="50"></div></div></div>
+      <div class="tool-card"><div class="tool-name">Jupyter</div><div class="tool-level">Data Science</div><div class="tool-bar"><div class="tool-fill" data-width="55"></div></div></div>
+    </div>
+  </div>
+
+  <div class="content-section" style="padding-top:1rem;">
+    <div class="section-label">Langues</div>
+    <h2 class="section-title">Compétences Linguistiques</h2>
+    <div class="langs-grid">
+      <div class="lang-card"><span class="lang-flag">🇫🇷</span><div class="lang-name">Français</div><div class="lang-level">Langue maternelle</div><div class="lang-desc">Courant - écrit et oral</div></div>
+      <div class="lang-card"><span class="lang-flag">🇬🇧 </span><div class="lang-name">Anglais</div><div class="lang-level">Intermédiaire</div><div class="lang-desc">Lecture technique, bases orales</div></div>
+      <div class="lang-card"><span class="lang-flag">🇪🇸</span><div class="lang-name">Espagnol</div><div class="lang-level">Notions</div><div class="lang-desc">Bases scolaires</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2026 <span>Nathan MICHONNEAU</span></div>
+    <div>BUT Science des Données — IUT de Niort</div>
+  </footer>
+
+  <script>
+    
+    const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:.1});
+    document.querySelectorAll('.skill-block,.tool-card,.lang-card').forEach(el=>obs.observe(el));
+    const barObs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.querySelectorAll('.skill-fill,.tool-fill').forEach(f=>f.style.width=f.dataset.width+'%');barObs.unobserve(entry.target);}});},{threshold:.3});
+    document.querySelectorAll('.skill-block,.tools-grid').forEach(el=>barObs.observe(el));
+    const themeBtn=document.getElementById('themeBtn'),html=document.documentElement;
+    const saved=localStorage.getItem('theme')||'light';
+    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀':'☾';
+    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀':'☾';});
+  </script>
+</body>
+</html>
