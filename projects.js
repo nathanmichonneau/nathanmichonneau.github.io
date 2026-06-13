@@ -56,7 +56,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de développer une première expérience concrète en <strong>analyse financière d'entreprise</strong>, en lecture de documents comptables réels, en comparaison sectorielle et en synthèse structurée de données chiffrées pour produire un avis argumenté.</p>
   `,
   techs: ["Excel", "Analyse financière", "SIG", "PowerPoint"],
-  cover: "assets/projet/but-sd1/Sae_indicateurs/livrable.png",
+  cover: "assets/projet/but-sd1/Sae_indicateurs/couverture.png",
   photos: [
     {src: "assets/projet/but-sd1/Sae_indicateurs/livrable.png", caption : "Livrable photo 1"},
     {src: "assets/projet/but-sd1/Sae_indicateurs/livrable2.png", caption : "Livrable photo 2"},
@@ -90,7 +90,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de consolider ma compréhension des <strong>fondements mathématiques de la régression linéaire</strong>, de pratiquer la segmentation de données réelles et de produire un livrable complet incluant rapport d'analyse, script R commenté et fichier de prédictions.</p>
   `,
   techs: ["R", "CSV", "Statistiques", "Régression linéaire"],
-  cover: "assets/projet/but-sd1/Sae_regression/Livrable.png",
+  cover: "assets/projet/but-sd1/Sae_regression/couverture.png",
   photos: [
     {src: "assets/projet/but-sd1/Sae_regression/Livrable.png", caption : "Livrable introduction"},
     {src: "assets/projet/but-sd1/Sae_regression/code_r.png", caption : "code R"}
@@ -122,6 +122,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de développer une première expérience concrète en <strong>développement d'application de bureau avec Tkinter</strong>, en connexion base de données via <code>mysql-connector</code> et en conception d'une interface utilisateur complète, en binôme avec Alix Gouriet.</p>
   `,
   techs: [ "SQL", "phpMyAdmin", "CSV", "Tkinter", "Python" ],
+  cover : "assets/projet/but-sd1/Sae_app_greensd/couverture.png",
   photos: [ 
     {src: "assets/projet/but-sd1/Sae_app_greensd/dashboard.png", caption : "Tableau de bord"},
     {src: "assets/projet/but-sd1/Sae_app_greensd/administratif.png", caption : "Onglet administratif"},
@@ -153,6 +154,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de développer une première expérience concrète en <strong>développement d'application de bureau avec Tkinter</strong>, en connexion base de données via <code>mysql-connector</code>, et en conception d'une interface utilisateur complète et fonctionnelle, le tout en binôme avec Alix Gouriet sous forte contrainte de temps.</p>
   `,
   techs: ["Excel", "Analyse statistique", "Datavisualisation", "Enquête"],
+  cover: "assets/projet/but-sd1/Sae_analyse_enquete/couverture.png",
   photos: [
     {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen1.png", caption : "Paragraphe 1 + graph"},
     {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen2.png", caption : "Paragraphe 2 + graph"},
@@ -188,6 +190,7 @@ const PROJECTS = [
     { src: "assets/projet/but-sd1/Sae_app_notes/dashboard.png", caption: "Écran d'accueil (notes fictives)" },
     { src: "assets/projet/but-sd1/Sae_app_notes/resultats.png", caption: "Résultats (notes fictives)" },
   ],
+  cover: "assets/projet/but-sd1/Sae_app_notes/couverture.png",
   github: null,
   download: "assets/projet/but-sd1/Sae_app_notes/EduCheck - SAE reporting à partir de données stockées dans un SGBD relationnel - Nathan et Alix .zip",
   downloadLabel: "Télécharger (.zip) — notes fictives",
@@ -214,6 +217,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de découvrir les différentes étapes de la conception d'une enquête statistique, depuis la définition des objectifs jusqu'à la création du questionnaire. J'ai également développé mes compétences en méthodologie d'enquête, en rédaction de questions et en utilisation du logiciel Sphinx, tout en renforçant ma capacité à travailler en équipe.</p>
   `,
   techs: ["Sphinx", "enquête", "Travail en équipe"],
+  cover : "assets/projet/but-sd1/Sae_mise_en_place_enquete/couverture.png",
   photos: [
     {src: "assets/projet/but-sd1/Sae_mise_en_place_enquete/organigrame.png", caption : "organigrame"},
   ],
@@ -243,6 +247,7 @@ const PROJECTS = [
   <p>Ce projet m'a permis de renforcer mes compétences en traitement de données, en analyse statistique et en interprétation de résultats. J'ai également développé ma maîtrise d'Excel pour la création de tableaux, de calculs et de visualisations, tout en travaillant en équipe sur l'ensemble du projet.</p>
   `,
   techs: ["Excel", "INSEE", "Analyse statistique", "Datavisualisation"],
+  cover : "assets/projet/but-sd1/Sae_demographie/couverture.png",
   photos: [
     { src: "assets/projet/but-sd1/Sae_demographie/pyramide.png", caption: "Analyse démographique" },
   ],
@@ -270,6 +275,7 @@ const PROJECTS = [
     <p>Le projet a permis de renforcer les compétences en <strong>traitement de données avec Python</strong>, en logique de transformation de structures de données et en production de scripts fiables et reproductibles.</p>
     `,
     techs: ["Python", "JSON", "CSV" , "Spyder"],
+    cover : "assets/projet/but-sd1/Sae_Json_vers_csv/couverture.png",
     photos: [
       { src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnee_fichier_json.png", caption: "Fichier JSON de départ" },
       { src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnees_csv.png", caption: "Fichier CSV de fin" },
@@ -297,6 +303,7 @@ const PROJECTS = [
     <p>À l’oral, je me suis senti à l’aise aussi bien en français qu’en anglais. Ce projet m’a permis de développer mes compétences en expression écrite et orale dans les deux langues, ainsi que de renforcer mon travail en équipe, dont l’organisation s’est faite de manière fluide.</p>
     `,
     techs: ["PowerPoint", "Anglais", "Français", "Oral"],
+    cover : "assets/projet/but-sd1/Sae_Territoire/couverture.png",
     photos: [
       { src: "assets/projet/but-sd1/Sae_Territoire/territoire-diapo1.png", caption: "Diapositive" },
     ],
