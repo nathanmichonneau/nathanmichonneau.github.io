@@ -10,7 +10,7 @@
 const PROJECTS = [
   {
     id: "portfolio",
-    num: "12",
+    num: "13",
     title: "Portfolio Personnel",
     subtitle: "Design & Développement Web",
     status: "wip",
@@ -33,6 +33,42 @@ const PROJECTS = [
     github: "https://github.com/nathanmichonneau/nathanmichonneau.github.io",
     download: null,
     downloadLabel: "Téléchargable sur mon github",
+  },
+
+  {
+  id: "but-sd1-sae-mycotrack",
+  num: "12",
+  title: "MycoTrack — Suivi PCR mycoplasmes en élevages caprins",
+  subtitle: "Application web Streamlit connectée à une base MySQL, déployée en production",
+  status: "done",
+  date: "2026-06",
+  semestre: 2,
+  year: "2026 — Juin",
+  description: `
+  <p>Projet réalisé en trinôme avec Alix Gouriet et Nahel Goumard dans le cadre de la SAE de fin de première année. <strong>MycoTrack</strong> est une application web commandée par un <strong>GDS (Groupement de Défense Sanitaire)</strong> qui suit des troupeaux de chèvres pour détecter des mycoplasmes — bactéries responsables de maladies graves comme l'agalaxie contagieuse. Avant ce projet, les agents traitaient manuellement des fichiers Excel hétérogènes envoyés par plusieurs laboratoires.</p>
+
+  <p>L'application automatise entièrement le pipeline : <strong>import multi-format des fichiers Excel</strong> produits par les GDS 79, 86 et 16 (colonnes différentes, formats de dates variables, cas particuliers), insertion en base <strong>MySQL hébergée sur AlwaysData</strong> via tunnel SSH, puis restitution via un <strong>tableau de bord interactif</strong> avec KPIs en temps réel (élevages suivis, taux de positivité global, répartition par département).</p>
+
+  <p>L'interface comprend des <strong>graphiques Plotly</strong> (répartition des classements A→I, évolution du taux de positivité par année et par saison, top 10 des élevages positifs), une <strong>carte Folium interactive</strong> avec code couleur par classement et popups de détail, des <strong>pages CRUD complètes</strong> pour gérer élevages, prélèvements et résultats PCR, des <strong>exports PDF et Excel en un clic</strong>, et une page d'administration protégée par mot de passe.</p>
+
+  <p>Ma contribution personnelle couvrait l'intégralité du code Python et de l'interface Streamlit : construction de chaque page, intégration des graphiques, mise en place de la carte, gestion des exports et lien entre l'interface et la base de données. La principale difficulté technique a été le déploiement sur <strong>Streamlit Cloud</strong> : le port MySQL d'AlwaysData n'étant pas accessible depuis internet, il a fallu mettre en place un tunnel SSH stable en production.</p>
+
+  <p>L'application est <strong>accessible en ligne</strong> et accompagnée d'une vidéo de démonstration de 15 minutes. Ce projet est le plus complet de ma première année : modélisation BDD, Python avancé, traitement de données hétérogènes, visualisation et déploiement web en conditions réelles.</p>
+  `,
+  techs: ["Python", "Streamlit", "MySQL", "Plotly", "Folium", "SSH", "Excel", "AlwaysData", "GitHub"],
+  cover: "assets/projet/but-sd1/Sae_final/couverture.png",
+  photos: [
+    {src: "assets/projet/but-sd1/MycoTrack/dashboard.png", caption: "Tableau de bord"},
+    {src: "assets/projet/but-sd1/MycoTrack/carte.png", caption: "Carte interactive Folium"},
+    {src: "assets/projet/but-sd1/MycoTrack/graphiques.png", caption: "Graphiques Plotly"},
+    {src: "assets/projet/but-sd1/MycoTrack/import.png", caption: "Module d'import Excel"},
+    {src: "assets/projet/but-sd1/MycoTrack/crud.png", caption: "Pages CRUD"},
+  ],
+  github: "https://github.com/nathanmichonneau/mycotrack",
+  liveUrl: "https://mycotrack-eaqnpv2co69xfuzkegncqy.streamlit.app/",
+  videoUrl: "https://youtu.be/pl7BpUzWl7c",
+  download: "assets/projet/but-sd1/MycoTrack/MycoTrack.zip",
+  downloadLabel: "Télécharger le projet (.zip)",
   },
 
   {
