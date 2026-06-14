@@ -1,10 +1,6 @@
 // ============================================================
 //  DONNÉES DES PROJETS — modifiez ce fichier pour ajouter /
 //  modifier vos projets. Compatible GitHub Pages (100% JS).
-//
-//  CHAMPS NOUVEAUX :
-//    date      : "YYYY-MM"  → sert au tri et au filtre mois/année
-//    semestre  : 1 | 2      → filtre semestre
 // ============================================================
 
 const PROJECTS = [
@@ -14,9 +10,9 @@ const PROJECTS = [
     title: "Portfolio Personnel",
     subtitle: "Design & Développement Web",
     status: "wip",
-    date: "2026-06",      // YYYY-MM (pas de jour)
+    date: "2026-06",
     semestre: 2,
-    year: "2026- Juin",
+    year: "2026 — Juin",
     description: `
       <p>Conception et développement de ce portfolio entièrement en HTML, CSS et JavaScript.
       L'objectif était de créer une vitrine interactive qui reflète à la fois mon style et mes compétences techniques.</p>
@@ -26,336 +22,330 @@ const PROJECTS = [
       <p>Chaque page est indépendante, ce qui le rend hébergeable directement sur GitHub.</p>
     `,
     techs: ["HTML", "CSS", "JavaScript", "GitHub"],
-    cover: null, // ex: "assets/projet/portfolio/cover.png"
-    photos: [
-
-    ],
+    cover: null,
+    photos: [],
     github: "https://github.com/nathanmichonneau/nathanmichonneau.github.io",
     download: null,
     downloadLabel: "Téléchargable sur mon github",
   },
 
   {
-  id: "but-sd1-sae-mycotrack",
-  num: "12",
-  title: "MycoTrack - Suivi PCR mycoplasmes en élevages caprins",
-  subtitle: "Application web Streamlit connectée à une base MySQL, déployée en production",
-  status: "done",
-  date: "2026-06",
-  semestre: 2,
-  year: "2026 — Juin",
-  description: `
-  <p>Projet réalisé en trinôme avec Alix Gouriet et Nahel Goumard dans le cadre de la SAE de fin de première année. <strong>MycoTrack</strong> est une application web commandée par un <strong>GDS (Groupement de Défense Sanitaire)</strong> qui suit des troupeaux de chèvres pour détecter des mycoplasmes — bactéries responsables de maladies graves comme l'agalaxie contagieuse. Avant ce projet, les agents traitaient manuellement des fichiers Excel hétérogènes envoyés par plusieurs laboratoires.</p>
+    id: "but-sd1-sae-mycotrack",
+    num: "12",
+    title: "MycoTrack - Suivi PCR mycoplasmes en élevages caprins",
+    subtitle: "Application web Streamlit connectée à une base MySQL, déployée en production",
+    status: "done",
+    date: "2026-06",
+    semestre: 2,
+    year: "2026 — Juin",
+    description: `
+    <p>Projet réalisé en trinôme avec Alix Gouriet et Nahel Goumard dans le cadre de la SAE de fin de première année. <strong>MycoTrack</strong> est une application web commandée par un <strong>GDS (Groupement de Défense Sanitaire)</strong> qui suit des troupeaux de chèvres pour détecter des mycoplasmes — bactéries responsables de maladies graves comme l'agalaxie contagieuse. Avant ce projet, les agents traitaient manuellement des fichiers Excel hétérogènes envoyés par plusieurs laboratoires.</p>
 
-  <p>L'application automatise entièrement le pipeline : <strong>import multi-format des fichiers Excel</strong> produits par les GDS 79, 86 et 16 (colonnes différentes, formats de dates variables, cas particuliers), insertion en base <strong>MySQL hébergée sur AlwaysData</strong> via tunnel SSH, puis restitution via un <strong>tableau de bord interactif</strong> avec KPIs en temps réel (élevages suivis, taux de positivité global, répartition par département).</p>
+    <p>L'application automatise entièrement le pipeline : <strong>import multi-format des fichiers Excel</strong> produits par les GDS 79, 86 et 16 (colonnes différentes, formats de dates variables, cas particuliers), insertion en base <strong>MySQL hébergée sur AlwaysData</strong> via tunnel SSH, puis restitution via un <strong>tableau de bord interactif</strong> avec KPIs en temps réel (élevages suivis, taux de positivité global, répartition par département).</p>
 
-  <p>L'interface comprend des <strong>graphiques Plotly</strong> (répartition des classements A→I, évolution du taux de positivité par année et par saison, top 10 des élevages positifs), une <strong>carte Folium interactive</strong> avec code couleur par classement et popups de détail, des <strong>pages CRUD complètes</strong> pour gérer élevages, prélèvements et résultats PCR, des <strong>exports PDF et Excel en un clic</strong>, et une page d'administration protégée par mot de passe.</p>
+    <p>L'interface comprend des <strong>graphiques Plotly</strong> (répartition des classements A→I, évolution du taux de positivité par année et par saison, top 10 des élevages positifs), une <strong>carte Folium interactive</strong> avec code couleur par classement et popups de détail, des <strong>pages CRUD complètes</strong> pour gérer élevages, prélèvements et résultats PCR, des <strong>exports PDF et Excel en un clic</strong>, et une page d'administration protégée par mot de passe.</p>
 
-  <p>Ma contribution personnelle couvrait l'intégralité du code Python et de l'interface Streamlit : construction de chaque page, intégration des graphiques, mise en place de la carte, gestion des exports et lien entre l'interface et la base de données. La principale difficulté technique a été le déploiement sur <strong>Streamlit Cloud</strong> : le port MySQL d'AlwaysData n'étant pas accessible depuis internet, il a fallu mettre en place un tunnel SSH stable en production.</p>
+    <p>Ma contribution personnelle couvrait l'intégralité du code Python et de l'interface Streamlit : construction de chaque page, intégration des graphiques, mise en place de la carte, gestion des exports et lien entre l'interface et la base de données. La principale difficulté technique a été le déploiement sur <strong>Streamlit Cloud</strong> : le port MySQL d'AlwaysData n'étant pas accessible depuis internet, il a fallu mettre en place un tunnel SSH stable en production.</p>
 
-  <p>L'application est <strong>accessible en ligne</strong> et accompagnée d'une vidéo de démonstration de 15 minutes. Ce projet est le plus complet de ma première année : modélisation BDD, Python avancé, traitement de données hétérogènes, visualisation et déploiement web en conditions réelles.</p>
-  `,
-  techs: ["Python", "Streamlit", "MySQL", "Plotly", "Folium", "SSH", "Excel", "AlwaysData", "GitHub"],
-  cover: "assets/projet/but-sd1/Sae_final/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_final/tableau_bord.png", caption: "Tableau de bord"},
-    {src: "assets/projet/but-sd1/Sae_final/carte.png", caption: "Carte interactive Folium"},
-    {src: "assets/projet/but-sd1/Sae_final/graphiques.png", caption: "Graphiques Plotly"},
-    {src: "assets/projet/but-sd1/Sae_final/import.png", caption: "Module d'import Excel"},
-    {src: "assets/projet/but-sd1/Sae_final/CRUD.png", caption: "Pages CRUD"},
-  ],
-  github: "https://github.com/nathanmichonneau/mycotrack",
-  liveUrl: "https://mycotrack-eaqnpv2co69xfuzkegncqy.streamlit.app/",
-  videoUrl: "https://youtu.be/pl7BpUzWl7c",
-  download: "assets/projet/but-sd1/MycoTrack/MycoTrack.zip",
-  downloadLabel: "Télécharger le projet (.zip)",
+    <p>L'application est <strong>accessible en ligne</strong> et accompagnée d'une vidéo de démonstration de 15 minutes. Ce projet est le plus complet de ma première année : modélisation BDD, Python avancé, traitement de données hétérogènes, visualisation et déploiement web en conditions réelles.</p>
+    `,
+    techs: ["Python", "Streamlit", "MySQL", "Plotly", "Folium", "GitHub", "SSH", "AlwaysData", "Oral", "Anglais"],
+    cover: "assets/projet/but-sd1/Sae_final/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_final/tableau_bord.png", caption: "Tableau de bord"},
+      {src: "assets/projet/but-sd1/Sae_final/carte.png", caption: "Carte interactive Folium"},
+      {src: "assets/projet/but-sd1/Sae_final/graphiques.png", caption: "Graphiques Plotly"},
+      {src: "assets/projet/but-sd1/Sae_final/import.png", caption: "Module d'import Excel"},
+      {src: "assets/projet/but-sd1/Sae_final/CRUD.png", caption: "Pages CRUD"},
+    ],
+    github: "https://github.com/nathanmichonneau/mycotrack",
+    liveUrl: "https://mycotrack-eaqnpv2co69xfuzkegncqy.streamlit.app/",
+    videoUrl: "https://youtu.be/pl7BpUzWl7c",
+    download: "assets/projet/but-sd1/MycoTrack/MycoTrack.zip",
+    downloadLabel: "Télécharger le projet (.zip)",
   },
 
   {
-  id: "but-sd1-sae-echantillonnage",
-  num: "11",
-  title: "Échantillonnage & Estimation - Centre-Val de Loire",
-  subtitle: "Sondage aléatoire simple vs stratifié sous R · Tests du khi-deux sur données d'enquête",
-  status: "done",
-  date: "2026-05",
-  semestre: 2,
-  year: "2026 — Mai",
-  description: `
-  <p>Projet réalisé en binôme avec Alix Gouriet dans le cadre de la SAE <strong>« Échantillonnage et Estimation »</strong> en Statistique Inférentielle. L'objectif était double : estimer le nombre d'habitants de la région <strong>Centre-Val de Loire</strong> (2 632 683 habitants, 1 757 communes) à partir d'un échantillon de 100 communes, puis analyser des relations statistiques entre la pratique sportive et d'autres variables issues d'une enquête étudiante.</p>
+    id: "but-sd1-sae-echantillonnage",
+    num: "11",
+    title: "Échantillonnage & Estimation - Centre-Val de Loire",
+    subtitle: "Sondage aléatoire simple vs stratifié sous R · Tests du khi-deux sur données d'enquête",
+    status: "done",
+    date: "2026-05",
+    semestre: 2,
+    year: "2026 — Mai",
+    description: `
+    <p>Projet réalisé en binôme avec Alix Gouriet dans le cadre de la SAE <strong>« Échantillonnage et Estimation »</strong> en Statistique Inférentielle. L'objectif était double : estimer le nombre d'habitants de la région <strong>Centre-Val de Loire</strong> (2 632 683 habitants, 1 757 communes) à partir d'un échantillon de 100 communes, puis analyser des relations statistiques entre la pratique sportive et d'autres variables issues d'une enquête étudiante.</p>
 
-  <p>La première partie compare deux méthodes d'échantillonnage. Le <strong>sondage aléatoire simple (S.A.S)</strong> tire 100 communes avec équiprobabilité : répété 10 fois, il produit des estimations très instables (de 2 M à 4,7 M d'habitants) avec des marges d'erreur dépassant parfois 2 millions — parce qu'une commune de 200 habitants a autant de chances d'être tirée qu'une ville de 100 000. Le <strong>sondage stratifié</strong> corrige ce biais en découpant les communes en 4 strates selon les quartiles de population (< 272 hab., 272–537, 537–1173, > 1173), puis en tirant proportionnellement dans chaque strate. Les résultats sont nettement plus stables et les marges d'erreur significativement réduites.</p>
+    <p>La première partie compare deux méthodes d'échantillonnage. Le <strong>sondage aléatoire simple (S.A.S)</strong> tire 100 communes avec équiprobabilité : répété 10 fois, il produit des estimations très instables (de 2 M à 4,7 M d'habitants) avec des marges d'erreur dépassant parfois 2 millions — parce qu'une commune de 200 habitants a autant de chances d'être tirée qu'une ville de 100 000. Le <strong>sondage stratifié</strong> corrige ce biais en découpant les communes en 4 strates selon les quartiles de population (< 272 hab., 272–537, 537–1173, > 1173), puis en tirant proportionnellement dans chaque strate. Les résultats sont nettement plus stables et les marges d'erreur significativement réduites.</p>
 
-  <p>La seconde partie porte sur une enquête auprès de 375 étudiants (76 variables qualitatives). Des <strong>tests du khi-deux</strong> ont été réalisés entre la variable <em>sport</em> et sept variables de mode de vie. Trois relations significatives (p < 0,01) ont été identifiées : le sexe (V de Cramer = 0,183), le département de formation (0,225), et surtout <strong>l'alimentation</strong> (V = 0,245) — la liaison la plus forte, montrant que les étudiants attentifs à leur alimentation pratiquent davantage le sport.</p>
+    <p>La seconde partie porte sur une enquête auprès de 375 étudiants (76 variables qualitatives). Des <strong>tests du khi-deux</strong> ont été réalisés entre la variable <em>sport</em> et sept variables de mode de vie. Trois relations significatives (p < 0,01) ont été identifiées : le sexe (V de Cramer = 0,183), le département de formation (0,225), et surtout <strong>l'alimentation</strong> (V = 0,245) — la liaison la plus forte, montrant que les étudiants attentifs à leur alimentation pratiquent davantage le sport.</p>
 
-  <p>Techniquement, le projet a nécessité un nettoyage préalable des données (suppression des espaces non-ASCII dans les effectifs via <code>gsub("[^0-9]", ...)</code>), l'implémentation manuelle de la formule de variance stratifiée, et l'export automatisé des 10 répétitions en fichiers Excel via <code>writexl</code> pour produire les graphiques comparatifs.</p>
+    <p>Techniquement, le projet a nécessité un nettoyage préalable des données (suppression des espaces non-ASCII dans les effectifs via <code>gsub("[^0-9]", ...)</code>), l'implémentation manuelle de la formule de variance stratifiée, et l'export automatisé des 10 répétitions en fichiers Excel via <code>writexl</code> pour produire les graphiques comparatifs.</p>
 
-  <p>Ce projet m'a permis de comprendre concrètement l'importance du <strong>choix méthodologique en sondage</strong> : une mauvaise méthode sur une population hétérogène produit des résultats inutilisables, même avec un code correct. C'est aussi ma première expérience complète du pipeline inférentiel sous R, de l'import de données brutes jusqu'à la production de conclusions argumentées.</p>
-  `,
-  techs: ["R", "Statistique", "Échantillonnage stratifié", "Excel",],
-  cover: "assets/projet/but-sd1/Sae_echantillon/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_echantillon/introducation.png", caption: "introduction"},
-    {src: "assets/projet/but-sd1/Sae_echantillon/graphique_sas.png", caption: "Estimations - sondage aléatoire simple (10 tirages)"},
-    {src: "assets/projet/but-sd1/Sae_echantillon/graphique_stratifie.png", caption: "Estimations — sondage stratifié (10 tirages)"},
-    {src: "assets/projet/but-sd1/Sae_echantillon/tableau_resultats.png", caption: "Tableau récapitulatif des résultats (Tableau khi-deux et V de Cramer) "},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_echantillon/Sae echantillonnage Alix GOURIET Nathan MICHONNEAU.pdf",
-  downloadLabel: "Télécharger le rapport (.pdf)",
+    <p>Ce projet m'a permis de comprendre concrètement l'importance du <strong>choix méthodologique en sondage</strong> : une mauvaise méthode sur une population hétérogène produit des résultats inutilisables, même avec un code correct. C'est aussi ma première expérience complète du pipeline inférentiel sous R, de l'import de données brutes jusqu'à la production de conclusions argumentées.</p>
+    `,
+    techs: ["R", "Statistiques", "Excel"],
+    cover: "assets/projet/but-sd1/Sae_echantillon/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_echantillon/introducation.png", caption: "Introduction"},
+      {src: "assets/projet/but-sd1/Sae_echantillon/graphique_sas.png", caption: "Estimations - sondage aléatoire simple (10 tirages)"},
+      {src: "assets/projet/but-sd1/Sae_echantillon/graphique_stratifie.png", caption: "Estimations — sondage stratifié (10 tirages)"},
+      {src: "assets/projet/but-sd1/Sae_echantillon/tableau_resultats.png", caption: "Tableau récapitulatif des résultats"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_echantillon/Sae echantillonnage Alix GOURIET Nathan MICHONNEAU.pdf",
+    downloadLabel: "Télécharger le rapport (.pdf)",
   },
 
   {
-  id: "but-sd1-journee-dataviz",
-  num: "10",
-  title: "Journée DataViz - 1er prix national",
-  subtitle: "Analyse INSEE de la natalité et mortalité en Gironde · Concours BUT SD France",
-  status: "done",
-  date: "2026-05",
-  semestre: 2,
-  year: "2026 — Mai",
-  description: `
-  <p>Projet réalisé en quatuor avec Marouane Yoda, Adrien Jouin et Ewan Goursaud dans le cadre de la <strong>Journée DataViz</strong>, concours national organisé conjointement par le <strong>réseau BUTsd France</strong> et l'<strong>INSEE</strong>. Notre équipe a remporté la <strong>1ère place au classement national</strong> toutes équipes confondues.</p>
+    id: "but-sd1-journee-dataviz",
+    num: "10",
+    title: "Journée DataViz - 1er prix national",
+    subtitle: "Analyse INSEE de la natalité et mortalité en Gironde · Concours BUT SD France",
+    status: "done",
+    date: "2026-05",
+    semestre: 2,
+    year: "2026 — Mai",
+    description: `
+    <p>Projet réalisé en quatuor avec Marouane Yoda, Adrien Jouin et Ewan Goursaud dans le cadre de la <strong>Journée DataViz</strong>, concours national organisé conjointement par le <strong>réseau BUTsd France</strong> et l'<strong>INSEE</strong>. Notre équipe a remporté la <strong>1ère place au classement national</strong> toutes équipes confondues.</p>
 
-  <p>Le sujet portait sur une question ouverte : <em>« Vivre plus densément influence-t-il la natalité et la mortalité en Gironde ? »</em>. À partir de données INSEE (densité de population 2022, espérances de vie à la naissance, taux de natalité), nous avons construit une <strong>infographie analytique complète</strong> répondant à cette problématique sur le département le plus grand de France (9 976 km²).</p>
+    <p>Le sujet portait sur une question ouverte : <em>« Vivre plus densément influence-t-il la natalité et la mortalité en Gironde ? »</em>. À partir de données INSEE (densité de population 2022, espérances de vie à la naissance, taux de natalité), nous avons construit une <strong>infographie analytique complète</strong> répondant à cette problématique sur le département le plus grand de France (9 976 km²).</p>
 
-  <p>L'analyse a révélé que la Gironde présente un profil démographique atypique : <strong>35,3 % de moins de 30 ans</strong>, seulement 9,35 % de personnes âgées (vs 21 % en France), un solde naturel positif de +3 394 naissances par an et une croissance de population de <strong>+6,83 % entre 2016 et 2022</strong> — portée à 81,5 % par le solde migratoire. Paradoxe central mis en lumière : <strong>44 % des communes sont en déficit naturel</strong> (plus de décès que de naissances), et les territoires à forte natalité ne sont pas nécessairement les plus denses, ce qui invalide l'hypothèse d'un lien direct entre densité et natalité.</p>
+    <p>L'analyse a révélé que la Gironde présente un profil démographique atypique : <strong>35,3 % de moins de 30 ans</strong>, seulement 9,35 % de personnes âgées (vs 21 % en France), un solde naturel positif de +3 394 naissances par an et une croissance de population de <strong>+6,83 % entre 2016 et 2022</strong> — portée à 81,5 % par le solde migratoire. Paradoxe central mis en lumière : <strong>44 % des communes sont en déficit naturel</strong> (plus de décès que de naissances), et les territoires à forte natalité ne sont pas nécessairement les plus denses, ce qui invalide l'hypothèse d'un lien direct entre densité et natalité.</p>
 
-  <p>Le livrable est une <strong>infographie mono-page</strong> combinant carte choroplèthe de densité, carte des naissances par commune, graphiques en barres segmentés par degré d'urbanité (rural / urbain intermédiaire / urbain dense) et indicateurs clés mise en page dans un style éditorial soigné.</p>
+    <p>Le livrable est une <strong>infographie mono-page</strong> combinant carte choroplèthe de densité, carte des naissances par commune, graphiques en barres segmentés par degré d'urbanité (rural / urbain intermédiaire / urbain dense) et indicateurs clés mise en page dans un style éditorial soigné.</p>
 
-  <p>Ce projet m'a permis de pratiquer la <strong>dataviz à contrainte forte</strong> (une page, une problématique, un jury national), de travailler la hiérarchie visuelle de l'information statistique et de confronter nos choix graphiques à une audience d'experts INSEE.</p>
-  `,
-  techs: ["DataViz", "INSEE", "Cartographie", "Infographie", "Analyse démographique"],
-  cover: "assets/projet/but-sd1/Journee_dataviz/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Journee_dataviz/infographie.png", caption: "Infographie complète"},
-    {src: "assets/projet/but-sd1/Journee_dataviz/carte_densite.png", caption: "Carte densité"},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Journee_dataviz/Journée DataViz Nathan MICHONNEAU Marouane YODA Adrien JOUIN Ewan GOURSAUD.pdf",
-  downloadLabel: "Télécharger l'infographie (.pdf)",
+    <p>Ce projet m'a permis de pratiquer la <strong>dataviz à contrainte forte</strong> (une page, une problématique, un jury national), de travailler la hiérarchie visuelle de l'information statistique et de confronter nos choix graphiques à une audience d'experts INSEE.</p>
+    `,
+    techs: ["Datavisualisation", "Infographie", "Cartographie", "Statistiques", "INSEE"],
+    cover: "assets/projet/but-sd1/Journee_dataviz/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Journee_dataviz/infographie.png", caption: "Infographie complète"},
+      {src: "assets/projet/but-sd1/Journee_dataviz/carte_densite.png", caption: "Carte densité"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Journee_dataviz/Journée DataViz Nathan MICHONNEAU Marouane YODA Adrien JOUIN Ewan GOURSAUD.pdf",
+    downloadLabel: "Télécharger l'infographie (.pdf)",
   },
 
   {
-  id: "but-sd1-sae-indicateurs-performance",
-  num: "09",
-  title: "Diagnostic financier - Fleury Michon Libre-Service",
-  subtitle: "Construction d'indicateurs de performance et présentation structurée",
-  status: "done",
-  date: "2026-05",
-  semestre: 2,
-  year: "2026 — Mai",
-  description: `
-  <p>Projet réalisé en trinôme avec Alix Gouriet et Nahel Goumard dans le cadre de la SAE <strong>« Construction et présentation d'indicateurs de performance »</strong>. L'objectif était de mener un <strong>diagnostic financier complet</strong> de l'entreprise <strong>Fleury Michon Libre-Service</strong>, leader français du jambon supérieur, à partir de ses données comptables sur la période 2019–2022.</p>
+    id: "but-sd1-sae-indicateurs-performance",
+    num: "09",
+    title: "Diagnostic financier - Fleury Michon Libre-Service",
+    subtitle: "Construction d'indicateurs de performance et présentation structurée",
+    status: "done",
+    date: "2026-05",
+    semestre: 2,
+    year: "2026 — Mai",
+    description: `
+    <p>Projet réalisé en trinôme avec Alix Gouriet et Nahel Goumard dans le cadre de la SAE <strong>« Construction et présentation d'indicateurs de performance »</strong>. L'objectif était de mener un <strong>diagnostic financier complet</strong> de l'entreprise <strong>Fleury Michon Libre-Service</strong>, leader français du jambon supérieur, à partir de ses données comptables sur la période 2019–2022.</p>
 
-  <p>Le travail s'est articulé en deux temps. D'abord, une <strong>analyse des indicateurs clés</strong> : évolution du chiffre d'affaires (de 685 M€ en 2019 à 743,7 M€ en 2022), de la valeur ajoutée, de l'EBE et du résultat net. Ces données ont été calculées et organisées dans un fichier <strong>Excel</strong> structuré. Ensuite, un <strong>positionnement sectoriel</strong> par comparaison avec les normes de l'industrie alimentaire publiées par l'INSEE en 2022, permettant d'identifier précisément les écarts, favorables (VA/CA de 20,3 % vs 17,2 % secteur) ou défavorables (EBE/CA de 3,8 % vs 4,8 %, CAF/CA de 3,0 % vs 5,8 %).</p>
+    <p>Le travail s'est articulé en deux temps. D'abord, une <strong>analyse des indicateurs clés</strong> : évolution du chiffre d'affaires (de 685 M€ en 2019 à 743,7 M€ en 2022), de la valeur ajoutée, de l'EBE et du résultat net. Ces données ont été calculées et organisées dans un fichier <strong>Excel</strong> structuré. Ensuite, un <strong>positionnement sectoriel</strong> par comparaison avec les normes de l'industrie alimentaire publiées par l'INSEE en 2022, permettant d'identifier précisément les écarts, favorables (VA/CA de 20,3 % vs 17,2 % secteur) ou défavorables (EBE/CA de 3,8 % vs 4,8 %, CAF/CA de 3,0 % vs 5,8 %).</p>
 
-  <p>L'analyse a mis en évidence une <strong>résilience structurelle</strong> de l'entreprise (CA en croissance, productivité par salarié passée de 273 k€ à 327 k€), mais aussi une compression des marges depuis 2020, accentuée par la hausse des matières premières (+24 % en 2022) et un poids des charges de personnel supérieur aux normes sectorielles (76,9 % de la VA contre 68,1 %).</p>
+    <p>L'analyse a mis en évidence une <strong>résilience structurelle</strong> de l'entreprise (CA en croissance, productivité par salarié passée de 273 k€ à 327 k€), mais aussi une compression des marges depuis 2020, accentuée par la hausse des matières premières (+24 % en 2022) et un poids des charges de personnel supérieur aux normes sectorielles (76,9 % de la VA contre 68,1 %).</p>
 
-  <p>Le livrable final prend la forme d'un <strong>rapport de diagnostic structuré</strong> (points forts, points de vigilance, verdict et perspectives) accompagné d'une <strong>présentation visuelle</strong> au format PDF et du fichier Excel de calcul des indicateurs.</p>
+    <p>Le livrable final prend la forme d'un <strong>rapport de diagnostic structuré</strong> (points forts, points de vigilance, verdict et perspectives) accompagné d'une <strong>présentation visuelle</strong> au format PDF et du fichier Excel de calcul des indicateurs.</p>
 
-  <p>Ce projet m'a permis de développer une première expérience concrète en <strong>analyse financière d'entreprise</strong>, en lecture de documents comptables réels, en comparaison sectorielle et en synthèse structurée de données chiffrées pour produire un avis argumenté.</p>
-  `,
-  techs: ["Excel", "Analyse financière", "SIG", "PowerPoint"],
-  cover: "assets/projet/but-sd1/Sae_indicateurs/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_indicateurs/livrable.png", caption : "Livrable photo 1"},
-    {src: "assets/projet/but-sd1/Sae_indicateurs/livrable2.png", caption : "Livrable photo 2"},
-    {src: "assets/projet/but-sd1/Sae_indicateurs/livrable3.png", caption : "Livrable photo 3"},
-    {src: "assets/projet/but-sd1/Sae_indicateurs/infographie.png", caption : "infographie"},
-    {src: "assets/projet/but-sd1/Sae_indicateurs/excel.png", caption : "excel"},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_indicateurs/Construction et présentation d'indicateurs de performance.zip",
-  downloadLabel: "Télécharger le dossier (.zip)",
+    <p>Ce projet m'a permis de développer une première expérience concrète en <strong>analyse financière d'entreprise</strong>, en lecture de documents comptables réels, en comparaison sectorielle et en synthèse structurée de données chiffrées pour produire un avis argumenté.</p>
+    `,
+    techs: ["Excel", "Analyse financière", "Datavisualisation",],
+    cover: "assets/projet/but-sd1/Sae_indicateurs/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_indicateurs/livrable.png", caption: "Livrable photo 1"},
+      {src: "assets/projet/but-sd1/Sae_indicateurs/livrable2.png", caption: "Livrable photo 2"},
+      {src: "assets/projet/but-sd1/Sae_indicateurs/livrable3.png", caption: "Livrable photo 3"},
+      {src: "assets/projet/but-sd1/Sae_indicateurs/infographie.png", caption: "Infographie"},
+      {src: "assets/projet/but-sd1/Sae_indicateurs/excel.png", caption: "Excel"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_indicateurs/Construction et présentation d'indicateurs de performance.zip",
+    downloadLabel: "Télécharger le dossier (.zip)",
   },
 
   {
-  id: "but-sd1-sae-regression-lineaire",
-  num: "08",
-  title: "Régression linéaire - Prix immobiliers niortais",
-  subtitle: "Modélisation statistique segmentée sous R, sans fonctions",
-  status: "done",
-  date: "2026-04",
-  semestre: 2,
-  year: "2026 — Avril",
-  description: `
-  <p>Projet réalisé en binôme avec Airy Tagne dans le cadre de la SAE <strong>« Régression sur des données réelles »</strong>. L'objectif était de construire un <strong>modèle de régression linéaire simple</strong> pour prédire les prix de vente de 1 277 logements situés dans la Communauté d'Agglomération du Niortais (Deux-Sèvres), à partir de transactions immobilières réelles enregistrées depuis 2021.</p>
+    id: "but-sd1-sae-regression-lineaire",
+    num: "08",
+    title: "Régression linéaire - Prix immobiliers niortais",
+    subtitle: "Modélisation statistique segmentée sous R, sans fonctions built-in",
+    status: "done",
+    date: "2026-04",
+    semestre: 2,
+    year: "2026 — Avril",
+    description: `
+    <p>Projet réalisé en binôme avec Airy Tagne dans le cadre de la SAE <strong>« Régression sur des données réelles »</strong>. L'objectif était de construire un <strong>modèle de régression linéaire simple</strong> pour prédire les prix de vente de 1 277 logements situés dans la Communauté d'Agglomération du Niortais (Deux-Sèvres), à partir de transactions immobilières réelles enregistrées depuis 2021.</p>
 
-  <p>La première étape a consisté en une <strong>analyse exploratoire approfondie</strong> de la variable cible (valeur foncière), dont la distribution s'étend de 12 000 € à 860 000 € avec une forte asymétrie à droite. Ce constat, couplé à l'observation d'un écart de prix de près de 80 % entre maisons et appartements, a conduit à mettre en place une <strong>segmentation en cinq groupes</strong> : tous les appartements (fusionnés en un segment unique), les maisons de Niort, les maisons périurbaines haut de gamme (Chauray, Bessines, Échiré...), les maisons périurbaines bas de gamme, et les maisons rurales.</p>
+    <p>La première étape a consisté en une <strong>analyse exploratoire approfondie</strong> de la variable cible (valeur foncière), dont la distribution s'étend de 12 000 € à 860 000 € avec une forte asymétrie à droite. Ce constat, couplé à l'observation d'un écart de prix de près de 80 % entre maisons et appartements, a conduit à mettre en place une <strong>segmentation en cinq groupes</strong> : tous les appartements (fusionnés en un segment unique), les maisons de Niort, les maisons périurbaines haut de gamme (Chauray, Bessines, Échiré...), les maisons périurbaines bas de gamme, et les maisons rurales.</p>
 
-  <p>Pour chaque segment, un modèle de régression linéaire <code>Prix = b0 + b1 × Surface</code> a été calibré <strong>manuellement par la méthode des moindres carrés</strong>, sans recourir aux fonctions <code>lm()</code> ni <code>predict()</code> de R. Les valeurs manquantes de surface dans le jeu à prédire ont été remplacées par la médiane du segment correspondant. Les 1 277 prédictions ont ensuite été exportées dans un fichier <code>prediction.csv</code>.</p>
+    <p>Pour chaque segment, un modèle de régression linéaire <code>Prix = b0 + b1 × Surface</code> a été calibré <strong>manuellement par la méthode des moindres carrés</strong>, sans recourir aux fonctions <code>lm()</code> ni <code>predict()</code> de R. Les valeurs manquantes de surface dans le jeu à prédire ont été remplacées par la médiane du segment correspondant. Les 1 277 prédictions ont ensuite été exportées dans un fichier <code>prediction.csv</code>.</p>
 
-  <p>La principale difficulté a été de trouver la bonne granularité de segmentation : trop fine, elle produisait des groupes avec trop peu d'observations pour être fiables ; trop grossière, elle masquait des disparités de marché réelles entre communes. Le choix final (cinq segments basés sur le type de bien et le niveau de prix moyen par commune) constituait le meilleur compromis entre représentativité et précision.</p>
+    <p>La principale difficulté a été de trouver la bonne granularité de segmentation : trop fine, elle produisait des groupes avec trop peu d'observations pour être fiables ; trop grossière, elle masquait des disparités de marché réelles entre communes. Le choix final (cinq segments basés sur le type de bien et le niveau de prix moyen par commune) constituait le meilleur compromis entre représentativité et précision.</p>
 
-  <p>Ce projet m'a permis de consolider ma compréhension des <strong>fondements mathématiques de la régression linéaire</strong>, de pratiquer la segmentation de données réelles et de produire un livrable complet incluant rapport d'analyse, script R commenté et fichier de prédictions.</p>
-  `,
-  techs: ["R", "CSV", "Statistiques", "Régression linéaire"],
-  cover: "assets/projet/but-sd1/Sae_regression/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_regression/Livrable.png", caption : "Livrable introduction"},
-    {src: "assets/projet/but-sd1/Sae_regression/code_r.png", caption : "code R"}
-
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_regression/Sae Regression linéaire.zip",
-  downloadLabel: "Télécharger le projet (.zip)",
+    <p>Ce projet m'a permis de consolider ma compréhension des <strong>fondements mathématiques de la régression linéaire</strong>, de pratiquer la segmentation de données réelles et de produire un livrable complet incluant rapport d'analyse, script R commenté et fichier de prédictions.</p>
+    `,
+    techs: ["R", "Statistiques", "CSV"],
+    cover: "assets/projet/but-sd1/Sae_regression/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_regression/Livrable.png", caption: "Livrable introduction"},
+      {src: "assets/projet/but-sd1/Sae_regression/code_r.png", caption: "Code R"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_regression/Sae Regression linéaire.zip",
+    downloadLabel: "Télécharger le projet (.zip)",
   },
 
   {
-  id: "but-sd1-sae-greensd",
-  num: "07",
-  title: "GreenSD - Système de gestion logistique éco-responsable",
-  subtitle: "Conception d'un SGBD et alimentation par scripts Python",
-  status: "done",
-  date: "2026-03",
-  semestre: 2,
-  year: "2026 — Mars",
-  description: `
-  <p>Projet réalisé <strong>en une semaine</strong> dans le cadre de la SAE <strong>« Reporting à partir de données stockées dans un SGBD relationnel »</strong>. L'objectif était de concevoir la base de données MySQL d'une entreprise de livraison éco-responsable fictive, <strong>GreenSD</strong>, et de l'exploiter via une application de bureau développée en <strong>Python / Tkinter</strong>.</p>
+    id: "but-sd1-sae-greensd",
+    num: "07",
+    title: "GreenSD - Système de gestion logistique éco-responsable",
+    subtitle: "Conception d'un SGBD et alimentation par scripts Python",
+    status: "done",
+    date: "2026-03",
+    semestre: 2,
+    year: "2026 — Mars",
+    description: `
+    <p>Projet réalisé <strong>en une semaine</strong> dans le cadre de la SAE <strong>« Reporting à partir de données stockées dans un SGBD relationnel »</strong>. L'objectif était de concevoir la base de données MySQL d'une entreprise de livraison éco-responsable fictive, <strong>GreenSD</strong>, et de l'exploiter via une application de bureau développée en <strong>Python / Tkinter</strong>.</p>
 
-  <p>Le cœur de l'application est son <strong>tableau de bord</strong> : dès l'ouverture, trois cartes affichent en temps réel l'état de la base — combien de tables existent, combien d'enregistrements ont été insérés au total, et combien de requêtes SQL sont stockées. Une barre en haut de fenêtre indique en permanence l'heure, le nom de la base connectée et si la connexion MySQL est active ou non.</p>
+    <p>Le cœur de l'application est son <strong>tableau de bord</strong> : dès l'ouverture, trois cartes affichent en temps réel l'état de la base — combien de tables existent, combien d'enregistrements ont été insérés au total, et combien de requêtes SQL sont stockées. Une barre en haut de fenêtre indique en permanence l'heure, le nom de la base connectée et si la connexion MySQL est active ou non.</p>
 
-  <p>Depuis ce tableau de bord, on accède à tous les modules de l'application : <strong>Visualiser</strong> pour consulter le contenu de n'importe quelle table dans un tableau interactif, un ensemble de formulaires pour <strong>ajouter, modifier et supprimer</strong> des enregistrements directement depuis l'interface, un module de <strong>requêtes SQL</strong> pour sélectionner et exécuter des analyses stockées en base, et enfin un espace d'<strong>administration</strong> pour créer la base, lancer les scripts de création et d'insertion, exécuter le script Python d'import CSV, ou remettre les tables à zéro.</p>
+    <p>Depuis ce tableau de bord, on accède à tous les modules de l'application : <strong>Visualiser</strong> pour consulter le contenu de n'importe quelle table dans un tableau interactif, un ensemble de formulaires pour <strong>ajouter, modifier et supprimer</strong> des enregistrements directement depuis l'interface, un module de <strong>requêtes SQL</strong> pour sélectionner et exécuter des analyses stockées en base, et enfin un espace d'<strong>administration</strong> pour créer la base, lancer les scripts de création et d'insertion, exécuter le script Python d'import CSV, ou remettre les tables à zéro.</p>
 
-  <p>La principale difficulté dans ce délai d'une semaine a été de garder l'interface à jour avec l'état réel de la base après chaque action, de gérer les erreurs MySQL sans faire planter l'application, et d'assurer une navigation fluide entre les pages en nettoyant proprement l'affichage à chaque changement de vue.</p>
+    <p>La principale difficulté dans ce délai d'une semaine a été de garder l'interface à jour avec l'état réel de la base après chaque action, de gérer les erreurs MySQL sans faire planter l'application, et d'assurer une navigation fluide entre les pages en nettoyant proprement l'affichage à chaque changement de vue.</p>
 
-  <p>Ce projet m'a permis de développer une première expérience concrète en <strong>développement d'application de bureau avec Tkinter</strong>, en connexion base de données via <code>mysql-connector</code> et en conception d'une interface utilisateur complète, en binôme avec Alix Gouriet.</p>
-  `,
-  techs: [ "SQL", "phpMyAdmin", "CSV", "Tkinter", "Python" ],
-  cover : "assets/projet/but-sd1/Sae_app_greensd/couverture.png",
-  photos: [ 
-    {src: "assets/projet/but-sd1/Sae_app_greensd/dashboard.png", caption : "Tableau de bord"},
-    {src: "assets/projet/but-sd1/Sae_app_greensd/administratif.png", caption : "Onglet administratif"},
-    {src: "assets/projet/but-sd1/Sae_app_greensd/table_livreur.png", caption : "table livreur"},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_app_greensd/Conception et Implémentation d'une BDD Nathan_Alix.zip",
-  downloadLabel: "Télécharger l'application (.zip)",
+    <p>Ce projet m'a permis de développer une première expérience concrète en <strong>développement d'application de bureau avec Tkinter</strong>, en connexion base de données via <code>mysql-connector</code> et en conception d'une interface utilisateur complète, en binôme avec Alix Gouriet.</p>
+    `,
+    techs: ["Python", "Tkinter", "SQL", "MySQL", "phpMyAdmin", "CSV", "Oral", "Français"],
+    cover: "assets/projet/but-sd1/Sae_app_greensd/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_app_greensd/dashboard.png", caption: "Tableau de bord"},
+      {src: "assets/projet/but-sd1/Sae_app_greensd/administratif.png", caption: "Onglet administratif"},
+      {src: "assets/projet/but-sd1/Sae_app_greensd/table_livreur.png", caption: "Table livreur"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_app_greensd/Conception et Implémentation d'une BDD Nathan_Alix.zip",
+    downloadLabel: "Télécharger l'application (.zip)",
   },
 
   {
-  id: "but-sd1-sae-telephone",
-  num: "06",
-  title: "Enquête Téléphone - Usage et dépendance numérique",
-  subtitle: "Préparation et synthèse d'un tableau de données",
-  status: "done",
-  date: "2026-01",
-  semestre: 1,
-  year: "2026 — Jan.",
-  description: `
-  <p>Projet réalisé <strong>en une semaine</strong> dans le cadre de la SAE <strong>« Reporting à partir de données stockées dans un SGBD relationnel »</strong>. L'objectif était de concevoir une base de données MySQL pour une entreprise de livraison éco-responsable fictive, <strong>GreenSD</strong>, et de l'exploiter via une interface graphique complète développée en <strong>Python / Tkinter</strong>.</p>
+    id: "but-sd1-sae-telephone",
+    num: "06",
+    title: "Enquête Téléphone - Usage et dépendance numérique",
+    subtitle: "Préparation et synthèse d'un tableau de données",
+    status: "done",
+    date: "2026-01",
+    semestre: 1,
+    year: "2026 — Jan.",
+    description: `
+    <p>Projet réalisé dans le cadre de la SAE <strong>« Analyse de données d'enquête »</strong>. L'objectif était d'analyser les usages numériques et la dépendance au téléphone chez les étudiants, à partir de données collectées par questionnaire.</p>
 
-  <p>L'application GreenSD est une interface de bureau à thème sombre organisée en plusieurs modules : un <strong>tableau de bord</strong> affichant en temps réel le nombre de tables, d'enregistrements et de requêtes stockées, un <strong>visualiseur de données</strong> permettant de parcourir le contenu de chaque table via un tableau interactif, un module d'<strong>administration BDD</strong> pour créer la base, exécuter les scripts SQL de création et d'insertion, et supprimer les tables, et enfin un module <strong>CRUD complet</strong> (ajouter, modifier, supprimer des enregistrements) directement depuis l'interface.</p>
+    <p>Le travail a consisté à nettoyer, structurer et analyser les données sous <strong>Excel</strong>, en produisant des tableaux croisés, des indicateurs synthétiques et des graphiques illustrant les tendances observées : temps d'écran moyen, applications les plus utilisées, perception de la dépendance selon le sexe ou le niveau d'études.</p>
 
-  <p>L'application intègre aussi un module de <strong>requêtes SQL</strong> permettant de sélectionner et d'exécuter des requêtes analytiques stockées dans la base (table <code>requetes_sql</code>), ainsi qu'un bouton pour lancer le script Python d'import CSV directement depuis l'interface. Une <strong>topbar</strong> affiche en permanence l'horloge, le nom de la base active et l'état de connexion MySQL en temps réel.</p>
+    <p>Le livrable prend la forme d'un <strong>rapport structuré</strong> combinant analyse commentée et visualisations, destiné à rendre les résultats lisibles pour un lecteur non spécialiste.</p>
 
-  <p>La principale difficulté, dans un délai d'une semaine, a été de gérer la connexion dynamique à MySQL (sauvegardée en JSON entre les sessions), de synchroniser l'interface avec l'état réel de la base, et de rendre l'outil suffisamment robuste pour encaisser des erreurs SQL sans planter.</p>
-
-  <p>Ce projet m'a permis de développer une première expérience concrète en <strong>développement d'application de bureau avec Tkinter</strong>, en connexion base de données via <code>mysql-connector</code>, et en conception d'une interface utilisateur complète et fonctionnelle, le tout en binôme avec Alix Gouriet sous forte contrainte de temps.</p>
-  `,
-  techs: ["Excel", "Analyse statistique", "Datavisualisation", "Enquête"],
-  cover: "assets/projet/but-sd1/Sae_analyse_enquete/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen1.png", caption : "Paragraphe 1 + graph"},
-    {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen2.png", caption : "Paragraphe 2 + graph"},
-    {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen3.png", caption : "Tableau de bord"},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_analyse_enquete/SAE 3 - L'enquête Téléphone - Nathan Michonneau Alix Gouriet.pdf",
-  downloadLabel: "Télécharger (.pdf)",
+    <p>Ce projet m'a permis de renforcer mes compétences en <strong>analyse de données d'enquête</strong>, en construction de graphiques pertinents sous Excel et en rédaction de synthèses statistiques argumentées.</p>
+    `,
+    techs: ["Excel", "Statistiques", "Datavisualisation"],
+    cover: "assets/projet/but-sd1/Sae_analyse_enquete/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen1.png", caption: "Paragraphe 1 + graph"},
+      {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen2.png", caption: "Paragraphe 2 + graph"},
+      {src: "assets/projet/but-sd1/Sae_analyse_enquete/screen3.png", caption: "Tableau de bord"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_analyse_enquete/SAE 3 - L'enquête Téléphone - Nathan Michonneau Alix Gouriet.pdf",
+    downloadLabel: "Télécharger (.pdf)",
   },
 
   {
-  id: "but-sd1-sae-educheck",
-  num: "05",
-  title: "EduCheck - Système de gestion des notes académiques",
-  subtitle: "Reporting à partir de données stockées dans un SGBD relationnel",
-  status: "done",
-  date: "2025-12",
-  semestre: 1,
-  year: "2025 — Déc.",
-  description: `
-  <p>Projet réalisé dans le cadre de la SAE <strong>« Reporting à partir de données stockées dans un SGBD relationnel »</strong>. L'objectif était de produire un rapport structuré à partir de données académiques stockées dans une base de données relationnelle, en exploitant <strong>Excel</strong> comme outil d'analyse et de visualisation.</p>
+    id: "but-sd1-sae-educheck",
+    num: "05",
+    title: "EduCheck - Système de gestion des notes académiques",
+    subtitle: "Reporting à partir de données stockées dans un SGBD relationnel",
+    status: "done",
+    date: "2025-12",
+    semestre: 1,
+    year: "2025 — Déc.",
+    description: `
+    <p>Projet réalisé dans le cadre de la SAE <strong>« Reporting à partir de données stockées dans un SGBD relationnel »</strong>. L'objectif était de produire un rapport structuré à partir de données académiques stockées dans une base de données relationnelle, en exploitant <strong>Excel</strong> comme outil d'analyse et de visualisation.</p>
 
-  <p>Le travail a consisté à interroger, nettoyer et structurer les données issues du SGBD afin de produire des tableaux de bord clairs et exploitables : moyennes par matière, par module et par semestre, le tout en tenant compte des coefficients associés à chaque unité d'enseignement.</p>
+    <p>Le travail a consisté à interroger, nettoyer et structurer les données issues du SGBD afin de produire des tableaux de bord clairs et exploitables : moyennes par matière, par module et par semestre, le tout en tenant compte des coefficients associés à chaque unité d'enseignement.</p>
 
-  <p>En parallèle du livrable attendu, nous avons développé <strong>EduCheck</strong>, un outil Excel complet réalisé en bonus avec <strong>Alix Gouriet</strong>. Il s'agit d'un véritable système de gestion de notes organisé en quatre feuilles interdépendantes : un tableau de bord interactif, une base de données structurée, une feuille de calcul des moyennes et une vue graphique des résultats. L'interface repose sur des <strong>formulaires VBA</strong> permettant d'ajouter, modifier ou supprimer des notes sans toucher directement aux données, avec gestion des absences justifiées et des ABI.</p>
+    <p>En parallèle du livrable attendu, nous avons développé <strong>EduCheck</strong>, un outil Excel complet réalisé en bonus avec <strong>Alix Gouriet</strong>. Il s'agit d'un véritable système de gestion de notes organisé en quatre feuilles interdépendantes : un tableau de bord interactif, une base de données structurée, une feuille de calcul des moyennes et une vue graphique des résultats. L'interface repose sur des <strong>formulaires VBA</strong> permettant d'ajouter, modifier ou supprimer des notes sans toucher directement aux données, avec gestion des absences justifiées et des ABI.</p>
 
-  <p>La principale difficulté a été de concevoir une architecture cohérente entre les feuilles pour que les moyennes se recalculent automatiquement à chaque saisie, tout en garantissant l'intégrité des données. Nous avons également rédigé un <strong>guide utilisateur complet</strong> pour documenter l'outil.</p>
+    <p>La principale difficulté a été de concevoir une architecture cohérente entre les feuilles pour que les moyennes se recalculent automatiquement à chaque saisie, tout en garantissant l'intégrité des données. Nous avons également rédigé un <strong>guide utilisateur complet</strong> pour documenter l'outil.</p>
 
-  <p>Ce projet m'a permis de renforcer mes compétences en <strong>reporting de données</strong> et en <strong>modélisation relationnelle</strong>, tout en développant une première expérience concrète en automatisation <strong>VBA</strong> et en conception d'interface utilisateur sous Excel.</p>
-  `,
-  techs: ["Excel", "VBA", "SGBD", "Reporting", "Datavisualisation"],
-  photos: [
-    { src: "assets/projet/but-sd1/Sae_app_notes/dashboard.png", caption: "Écran d'accueil (notes fictives)" },
-    { src: "assets/projet/but-sd1/Sae_app_notes/resultats.png", caption: "Résultats (notes fictives)" },
-  ],
-  cover: "assets/projet/but-sd1/Sae_app_notes/couverture.png",
-  github: null,
-  download: "assets/projet/but-sd1/Sae_app_notes/EduCheck - SAE reporting à partir de données stockées dans un SGBD relationnel - Nathan et Alix .zip",
-  downloadLabel: "Télécharger (.zip) — notes fictives",
+    <p>Ce projet m'a permis de renforcer mes compétences en <strong>reporting de données</strong> et en <strong>modélisation relationnelle</strong>, tout en développant une première expérience concrète en automatisation <strong>VBA</strong> et en conception d'interface utilisateur sous Excel.</p>
+    `,
+    techs: ["Excel", "VBA", "SQL", "Datavisualisation", "Oral", "Français"],
+    cover: "assets/projet/but-sd1/Sae_app_notes/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_app_notes/dashboard.png", caption: "Écran d'accueil (notes fictives)"},
+      {src: "assets/projet/but-sd1/Sae_app_notes/resultats.png", caption: "Résultats (notes fictives)"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_app_notes/EduCheck - SAE reporting à partir de données stockées dans un SGBD relationnel - Nathan et Alix .zip",
+    downloadLabel: "Télécharger (.zip) — notes fictives",
   },
 
   {
-  id: "but-sd1-sae-enquete",
-  num: "04",
-  title: "Conception d'une enquête sur les réseaux sociaux",
-  subtitle: "Création d'un questionnaire avec Sphinx",
-  status: "done",
-  date: "2025-11",
-  semestre: 1,
-  year: "2025 — Nov.",
-  description: `
-  <p>Projet réalisé dans le cadre de la SAE <strong>« Mise en œuvre d'une enquête »</strong>. L'objectif était de concevoir une enquête sur l'utilisation des réseaux sociaux chez les jeunes afin d'étudier leurs habitudes, leurs pratiques et leur perception de ces outils numériques.</p>
+    id: "but-sd1-sae-enquete",
+    num: "04",
+    title: "Conception d'une enquête sur les réseaux sociaux",
+    subtitle: "Création d'un questionnaire avec Sphinx",
+    status: "done",
+    date: "2025-11",
+    semestre: 1,
+    year: "2025 — Nov.",
+    description: `
+    <p>Projet réalisé dans le cadre de la SAE <strong>« Mise en œuvre d'une enquête »</strong>. L'objectif était de concevoir une enquête sur l'utilisation des réseaux sociaux chez les jeunes afin d'étudier leurs habitudes, leurs pratiques et leur perception de ces outils numériques.</p>
 
-  <p>En groupe, nous avons commencé par réaliser un <strong>cahier des charges</strong> définissant les objectifs de l'enquête, le public cible et les modalités de diffusion du questionnaire. Nous avons ensuite élaboré un <strong>organigramme</strong> permettant de structurer les différentes questions et d'organiser le parcours des répondants.</p>
+    <p>En groupe, nous avons commencé par réaliser un <strong>cahier des charges</strong> définissant les objectifs de l'enquête, le public cible et les modalités de diffusion du questionnaire. Nous avons ensuite élaboré un <strong>organigramme</strong> permettant de structurer les différentes questions et d'organiser le parcours des répondants.</p>
 
-  <p>Le questionnaire a été conçu à l'aide du logiciel <strong>Sphinx</strong>. Nous avons travaillé sur la formulation des questions et le choix des modalités de réponse afin de recueillir des données pertinentes sur les usages des réseaux sociaux, le temps passé sur les différentes plateformes et les effets positifs ou négatifs ressentis par les utilisateurs.</p>
+    <p>Le questionnaire a été conçu à l'aide du logiciel <strong>Sphinx</strong>. Nous avons travaillé sur la formulation des questions et le choix des modalités de réponse afin de recueillir des données pertinentes sur les usages des réseaux sociaux, le temps passé sur les différentes plateformes et les effets positifs ou négatifs ressentis par les utilisateurs.</p>
 
-  <p>La principale difficulté a été de construire un questionnaire à la fois complet, cohérent et facile à comprendre. Il a également fallu sélectionner les questions les plus pertinentes tout en limitant la longueur de l'enquête afin d'encourager la participation des répondants.</p>
+    <p>La principale difficulté a été de construire un questionnaire à la fois complet, cohérent et facile à comprendre. Il a également fallu sélectionner les questions les plus pertinentes tout en limitant la longueur de l'enquête afin d'encourager la participation des répondants.</p>
 
-  <p>Ce projet m'a permis de découvrir les différentes étapes de la conception d'une enquête statistique, depuis la définition des objectifs jusqu'à la création du questionnaire. J'ai également développé mes compétences en méthodologie d'enquête, en rédaction de questions et en utilisation du logiciel Sphinx, tout en renforçant ma capacité à travailler en équipe.</p>
-  `,
-  techs: ["Sphinx", "enquête", "Travail en équipe"],
-  cover : "assets/projet/but-sd1/Sae_mise_en_place_enquete/couverture.png",
-  photos: [
-    {src: "assets/projet/but-sd1/Sae_mise_en_place_enquete/organigrame.png", caption : "organigrame"},
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_mise_en_place_enquete/SAE_Enquete_Groupe14.pdf",
-  downloadLabel: "Télécharger (.pdf)",
+    <p>Ce projet m'a permis de découvrir les différentes étapes de la conception d'une enquête statistique, depuis la définition des objectifs jusqu'à la création du questionnaire. J'ai également développé mes compétences en méthodologie d'enquête, en rédaction de questions et en utilisation du logiciel Sphinx, tout en renforçant ma capacité à travailler en équipe.</p>
+    `,
+    techs: ["Sphinx", "Statistiques", "Méthodologie d'enquête"],
+    cover: "assets/projet/but-sd1/Sae_mise_en_place_enquete/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_mise_en_place_enquete/organigrame.png", caption: "Organigramme"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_mise_en_place_enquete/SAE_Enquete_Groupe14.pdf",
+    downloadLabel: "Télécharger (.pdf)",
   },
 
   {
-  id: "but-sd1-sae-démograhie",
-  num: "03",
-  title: "Étude des villes les plus natalistes de France",
-  subtitle: "Production et analyse de données",
-  status: "done",
-  date: "2025-11",
-  semestre: 1,
-  year: "2025 — Nov.",
-  description: `
-  <p>Projet réalisé dans le cadre de la SAE <strong>« Apprendre en situation la production de données en entreprise »</strong>. L'objectif était d'étudier les communes françaises présentant les taux de natalité les plus élevés afin d'identifier les facteurs favorisant leur dynamisme démographique.</p>
+    id: "but-sd1-sae-démographie",
+    num: "03",
+    title: "Étude des villes les plus natalistes de France",
+    subtitle: "Production et analyse de données",
+    status: "done",
+    date: "2025-11",
+    semestre: 1,
+    year: "2025 — Nov.",
+    description: `
+    <p>Projet réalisé dans le cadre de la SAE <strong>« Apprendre en situation la production de données en entreprise »</strong>. L'objectif était d'étudier les communes françaises présentant les taux de natalité les plus élevés afin d'identifier les facteurs favorisant leur dynamisme démographique.</p>
 
-  <p>À partir des données de l'<strong>INSEE</strong>, nous avons constitué un échantillon regroupant les communes appartenant au dernier centile des taux de natalité observés entre 2016 et 2022. Afin d'éviter les biais liés aux petites populations, seules les communes de plus de 1 000 habitants ont été conservées.</p>
+    <p>À partir des données de l'<strong>INSEE</strong>, nous avons constitué un échantillon regroupant les communes appartenant au dernier centile des taux de natalité observés entre 2016 et 2022. Afin d'éviter les biais liés aux petites populations, seules les communes de plus de 1 000 habitants ont été conservées.</p>
 
-  <p>Le travail a principalement consisté à collecter, nettoyer et analyser les données sous <strong>Excel</strong>. Nous avons étudié plusieurs indicateurs tels que l'évolution de la population, la structure par âge et les catégories socioprofessionnelles afin de comparer ces communes à la moyenne nationale.</p>
+    <p>Le travail a principalement consisté à collecter, nettoyer et analyser les données sous <strong>Excel</strong>. Nous avons étudié plusieurs indicateurs tels que l'évolution de la population, la structure par âge et les catégories socioprofessionnelles afin de comparer ces communes à la moyenne nationale.</p>
 
-  <p>La principale difficulté a été de sélectionner les indicateurs les plus pertinents et d'interpréter correctement les résultats statistiques. Il a également fallu veiller à construire un échantillon représentatif et à éviter les conclusions hâtives à partir des données observées.</p>
+    <p>La principale difficulté a été de sélectionner les indicateurs les plus pertinents et d'interpréter correctement les résultats statistiques. Il a également fallu veiller à construire un échantillon représentatif et à éviter les conclusions hâtives à partir des données observées.</p>
 
-  <p>Ce projet m'a permis de renforcer mes compétences en traitement de données, en analyse statistique et en interprétation de résultats. J'ai également développé ma maîtrise d'Excel pour la création de tableaux, de calculs et de visualisations, tout en travaillant en équipe sur l'ensemble du projet.</p>
-  `,
-  techs: ["Excel", "INSEE", "Analyse statistique", "Datavisualisation"],
-  cover : "assets/projet/but-sd1/Sae_Demographie/couverture.png",
-  photos: [
-    { src: "assets/projet/but-sd1/Sae_Demographie/pyramide.png", caption: "Analyse démographique" },
-  ],
-  github: null,
-  download: "assets/projet/but-sd1/Sae_Demographie/Sae-Demographie.pdf",
-  downloadLabel: "Télécharger (.pdf)",
+    <p>Ce projet m'a permis de renforcer mes compétences en traitement de données, en analyse statistique et en interprétation de résultats. J'ai également développé ma maîtrise d'Excel pour la création de tableaux, de calculs et de visualisations, tout en travaillant en équipe sur l'ensemble du projet.</p>
+    `,
+    techs: ["Excel", "INSEE", "Statistiques", "Datavisualisation"],
+    cover: "assets/projet/but-sd1/Sae_Demographie/couverture.png",
+    photos: [
+      {src: "assets/projet/but-sd1/Sae_Demographie/pyramide.png", caption: "Analyse démographique"},
+    ],
+    github: null,
+    download: "assets/projet/but-sd1/Sae_Demographie/Sae-Demographie.pdf",
+    downloadLabel: "Télécharger (.pdf)",
   },
-
 
   {
     id: "but-sd1-gestion-fichiers",
@@ -363,9 +353,9 @@ const PROJECTS = [
     title: "Projet Gestion de fichiers",
     subtitle: "JSON → CSV",
     status: "done",
-    date: "2025-10",      
+    date: "2025-10",
     semestre: 1,
-    year: "2025 — oct.",
+    year: "2025 — Oct.",
     description: `
     <p>Projet réalisé en première année du BUT Science des Données intitulé "Gestion de fichiers".</p>
     <p>Le sujet portait sur l'exploitation d'un jeu de données réel en format <strong>JSON</strong> contenant des mesures de qualité de l'air (concentrations de différents polluants sur plusieurs stations).</p>
@@ -374,11 +364,11 @@ const PROJECTS = [
     <p>Un soin particulier a été apporté au formatage des données (encodage, accents, séparateur point-virgule, et format de date en français) afin de garantir une compatibilité avec Excel.</p>
     <p>Le projet a permis de renforcer les compétences en <strong>traitement de données avec Python</strong>, en logique de transformation de structures de données et en production de scripts fiables et reproductibles.</p>
     `,
-    techs: ["Python", "JSON", "CSV" , "Spyder"],
-    cover : "assets/projet/but-sd1/Sae_Json_vers_csv/couverture.png",
+    techs: ["Python", "JSON", "CSV", "Spyder"],
+    cover: "assets/projet/but-sd1/Sae_Json_vers_csv/couverture.png",
     photos: [
-      { src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnee_fichier_json.png", caption: "Fichier JSON de départ" },
-      { src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnees_csv.png", caption: "Fichier CSV de fin" },
+      {src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnee_fichier_json.png", caption: "Fichier JSON de départ"},
+      {src: "assets/projet/but-sd1/Sae_Json_vers_csv/gestion_donnees_csv.png", caption: "Fichier CSV de fin"},
     ],
     github: null,
     download: "assets/projet/but-sd1/Sae_Json_vers_csv/JSON_vers_CSV.py",
@@ -393,24 +383,25 @@ const PROJECTS = [
     status: "done",
     date: "2025-10",
     semestre: 1,
-    year: "2025 — oct.",
+    year: "2025 — Oct.",
     description: `
-    <p>Projet réalisé dans le cadre du premier projet de l’année, consistant à présenter une ville de taille comparable à Niort en termes de population.</p> 
-    <p>En groupe, nous avons choisi les villes de <strong>Bourges</strong> et <strong>Peterborough</strong>. 
-    Ce travail associait recherche documentaire, synthèse d’informations et préparation d’une présentation orale, réalisée à la fs en français et en anglais.</p>
+    <p>Projet réalisé dans le cadre du premier projet de l'année, consistant à présenter une ville de taille comparable à Niort en termes de population.</p>
+    <p>En groupe, nous avons choisi les villes de <strong>Bourges</strong> et <strong>Peterborough</strong>.
+    Ce travail associait recherche documentaire, synthèse d'informations et préparation d'une présentation orale, réalisée à la fois en français et en anglais.</p>
     <p>Les recherches se sont déroulées sans difficulté majeure. En revanche, la conception du <strong>PowerPoint</strong> a été plus exigeante : il a fallu organiser et hiérarchiser les informations de manière claire tout en conservant un format synthétique.</p>
-    <p>La principale contrainte a été la réduction et la sélection des données pertinentes : choisir les bons mots, les informations essentielles et structurer les diapositives afin d’éviter toute surcharge.</p> 
-    <p>À l’oral, je me suis senti à l’aise aussi bien en français qu’en anglais. Ce projet m’a permis de développer mes compétences en expression écrite et orale dans les deux langues, ainsi que de renforcer mon travail en équipe, dont l’organisation s’est faite de manière fluide.</p>
+    <p>La principale contrainte a été la réduction et la sélection des données pertinentes : choisir les bons mots, les informations essentielles et structurer les diapositives afin d'éviter toute surcharge.</p>
+    <p>À l'oral, je me suis senti à l'aise aussi bien en français qu'en anglais. Ce projet m'a permis de développer mes compétences en expression écrite et orale dans les deux langues, ainsi que de renforcer mon travail en équipe, dont l'organisation s'est faite de manière fluide.</p>
     `,
-    techs: ["PowerPoint", "Anglais", "Français", "Oral"],
-    cover : "assets/projet/but-sd1/Sae_Territoire/couverture.png",
+    techs: ["PowerPoint", "Oral", "Anglais", "Français"],
+    cover: "assets/projet/but-sd1/Sae_Territoire/couverture.png",
     photos: [
-      { src: "assets/projet/but-sd1/Sae_Territoire/territoire-diapo1.png", caption: "Diapositive" },
+      {src: "assets/projet/but-sd1/Sae_Territoire/territoire-diapo1.png", caption: "Diapositive"},
     ],
     github: null,
     download: "assets/projet/but-sd1/Sae_Territoire/Diapo SAE Territoire Nathan,Lucas,Alix.odp",
-    downloadLabel: "Télécharger le powerpoint(.odp)",
+    downloadLabel: "Télécharger le powerpoint (.odp)",
   },
+];
 
   // Ajoutez un nouveau projet ici
   // {
@@ -429,4 +420,3 @@ const PROJECTS = [
   //   download: "assets/projet/mon-projet/archive.zip",
   //   downloadLabel: "Télécharger (.zip)",
   // },
-];
