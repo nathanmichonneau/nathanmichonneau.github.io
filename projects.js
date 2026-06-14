@@ -38,7 +38,7 @@ const PROJECTS = [
   {
   id: "but-sd1-sae-mycotrack",
   num: "12",
-  title: "MycoTrack — Suivi PCR mycoplasmes en élevages caprins",
+  title: "MycoTrack - Suivi PCR mycoplasmes en élevages caprins",
   subtitle: "Application web Streamlit connectée à une base MySQL, déployée en production",
   status: "done",
   date: "2026-06",
@@ -74,8 +74,8 @@ const PROJECTS = [
   {
   id: "but-sd1-journee-dataviz",
   num: "10",
-  title: "Journée DataViz — 1er prix national",
-  subtitle: "Analyse INSEE de la natalité et mortalité en Gironde · Concours BUTsd France",
+  title: "Journée DataViz - 1er prix national",
+  subtitle: "Analyse INSEE de la natalité et mortalité en Gironde · Concours BUT SD France",
   status: "done",
   date: "2026-05",
   semestre: 2,
