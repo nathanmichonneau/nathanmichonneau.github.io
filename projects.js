@@ -98,7 +98,7 @@ const PROJECTS = [
     {src: "assets/projet/but-sd1/Journee_dataviz/carte_densite.png", caption: "Carte densité"},
   ],
   github: null,
-  download: "assets/projet/but-sd1/Journee_dataviz/Journée_DataViz_Nathan_MICHONNEAU.pdf",
+  download: "assets/projet/but-sd1/Journee_dataviz/Journée DataViz Nathan MICHONNEAU Marouane YODA Adrien JOUIN Ewan GOURSAUD.pdf",
   downloadLabel: "Télécharger l'infographie (.pdf)",
   },
 
