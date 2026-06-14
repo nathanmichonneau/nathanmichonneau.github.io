@@ -4,6 +4,30 @@
 // ============================================================
 
 const PROJECTS = [
+//  {
+//     id: "portfolio",
+//     num: "13",
+//     title: "Portfolio Personnel",
+//     subtitle: "Design & Développement Web",
+//     status: "wip",
+//     date: "2026-06",
+//     semestre: 2,
+//     year: "2026 — Juin",
+//     description: `
+//       <p>Conception et développement de ce portfolio entièrement en HTML, CSS et JavaScript.
+//       L'objectif était de créer une vitrine interactive qui reflète à la fois mon style et mes compétences techniques.</p>
+//       <p>L'interface inclut des animations déclenchées au scroll via
+//       <code>IntersectionObserver</code>, des barres de compétences animées, un basculeur de thème clair/sombre
+//      persistant via <code>localStorage</code>, et une navigation multi-pages cohérente.</p>
+//      <p>Chaque page est indépendante, ce qui le rend hébergeable directement sur GitHub.</p>
+//     `,
+//     techs: ["HTML", "CSS", "JavaScript", "GitHub"],
+//     cover: null,
+//     photos: [],
+//     github: "https://github.com/nathanmichonneau/nathanmichonneau.github.io",
+//     download: null,
+//     downloadLabel: "Téléchargable sur mon github",
+//   },
 
   {
     id: "but-sd1-sae-mycotrack",
