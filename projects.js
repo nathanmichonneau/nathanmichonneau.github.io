@@ -36,6 +36,37 @@ const PROJECTS = [
   },
 
   {
+  id: "but-sd1-journee-dataviz",
+  num: "10",
+  title: "Journée DataViz — 1er prix national",
+  subtitle: "Analyse INSEE de la natalité et mortalité en Gironde · Concours BUTsd France",
+  status: "done",
+  date: "2026-05",
+  semestre: 2,
+  year: "2026 — Mai",
+  description: `
+  <p>Projet réalisé en quatuor avec Marouane Yoda, Adrien Jouin et Ewan Goursaud dans le cadre de la <strong>Journée DataViz</strong>, concours national organisé conjointement par le <strong>réseau BUTsd France</strong> et l'<strong>INSEE</strong>. Notre équipe a remporté la <strong>1ère place au classement national</strong> toutes équipes confondues.</p>
+
+  <p>Le sujet portait sur une question ouverte : <em>« Vivre plus densément influence-t-il la natalité et la mortalité en Gironde ? »</em>. À partir de données INSEE (densité de population 2022, espérances de vie à la naissance, taux de natalité), nous avons construit une <strong>infographie analytique complète</strong> répondant à cette problématique sur le département le plus grand de France (9 976 km²).</p>
+
+  <p>L'analyse a révélé que la Gironde présente un profil démographique atypique : <strong>35,3 % de moins de 30 ans</strong>, seulement 9,35 % de personnes âgées (vs 21 % en France), un solde naturel positif de +3 394 naissances par an et une croissance de population de <strong>+6,83 % entre 2016 et 2022</strong> — portée à 81,5 % par le solde migratoire. Paradoxe central mis en lumière : <strong>44 % des communes sont en déficit naturel</strong> (plus de décès que de naissances), et les territoires à forte natalité ne sont pas nécessairement les plus denses, ce qui invalide l'hypothèse d'un lien direct entre densité et natalité.</p>
+
+  <p>Le livrable est une <strong>infographie mono-page</strong> combinant carte choroplèthe de densité, carte des naissances par commune, graphiques en barres segmentés par degré d'urbanité (rural / urbain intermédiaire / urbain dense) et indicateurs clés mise en page dans un style éditorial soigné.</p>
+
+  <p>Ce projet m'a permis de pratiquer la <strong>dataviz à contrainte forte</strong> (une page, une problématique, un jury national), de travailler la hiérarchie visuelle de l'information statistique et de confronter nos choix graphiques à une audience d'experts INSEE.</p>
+  `,
+  techs: ["DataViz", "INSEE", "Cartographie", "Infographie", "Analyse démographique"],
+  cover: "assets/projet/but-sd1/Journee_dataviz/couverture.png",
+  photos: [
+    {src: "assets/projet/but-sd1/Journee_dataviz/infographie.png", caption: "Infographie complète"},
+    {src: "assets/projet/but-sd1/Journee_dataviz/carte_densite.png", caption: "Carte densité"},
+  ],
+  github: null,
+  download: "assets/projet/but-sd1/Journee_dataviz/Journée_DataViz_Nathan_MICHONNEAU.pdf",
+  downloadLabel: "Télécharger l'infographie (.pdf)",
+  },
+
+  {
   id: "but-sd1-sae-indicateurs-performance",
   num: "09",
   title: "Diagnostic financier - Fleury Michon Libre-Service",
