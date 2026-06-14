@@ -60,15 +60,48 @@ const PROJECTS = [
   photos: [
     {src: "assets/projet/but-sd1/Sae_final/tableau_bord.png", caption: "Tableau de bord"},
     {src: "assets/projet/but-sd1/Sae_final/carte.png", caption: "Carte interactive Folium"},
-    {src: "assets/projet/but-sd1/MycoTrack/graphiques.png", caption: "Graphiques Plotly"},
-    {src: "assets/projet/but-sd1/MycoTrack/import.png", caption: "Module d'import Excel"},
-    {src: "assets/projet/but-sd1/MycoTrack/CRUD.png", caption: "Pages CRUD"},
+    {src: "assets/projet/but-sd1/Sae_final/graphiques.png", caption: "Graphiques Plotly"},
+    {src: "assets/projet/but-sd1/Sae_final/import.png", caption: "Module d'import Excel"},
+    {src: "assets/projet/but-sd1/Sae_final/CRUD.png", caption: "Pages CRUD"},
   ],
   github: "https://github.com/nathanmichonneau/mycotrack",
   liveUrl: "https://mycotrack-eaqnpv2co69xfuzkegncqy.streamlit.app/",
   videoUrl: "https://youtu.be/pl7BpUzWl7c",
   download: "assets/projet/but-sd1/MycoTrack/MycoTrack.zip",
   downloadLabel: "Télécharger le projet (.zip)",
+  },
+
+  {
+  id: "but-sd1-sae-echantillonnage",
+  num: "11",
+  title: "Échantillonnage & Estimation - Centre-Val de Loire",
+  subtitle: "Sondage aléatoire simple vs stratifié sous R · Tests du khi-deux sur données d'enquête",
+  status: "done",
+  date: "2026-05",
+  semestre: 2,
+  year: "2026 — Mai",
+  description: `
+  <p>Projet réalisé en binôme avec Alix Gouriet dans le cadre de la SAE <strong>« Échantillonnage et Estimation »</strong> en Statistique Inférentielle. L'objectif était double : estimer le nombre d'habitants de la région <strong>Centre-Val de Loire</strong> (2 632 683 habitants, 1 757 communes) à partir d'un échantillon de 100 communes, puis analyser des relations statistiques entre la pratique sportive et d'autres variables issues d'une enquête étudiante.</p>
+
+  <p>La première partie compare deux méthodes d'échantillonnage. Le <strong>sondage aléatoire simple (S.A.S)</strong> tire 100 communes avec équiprobabilité : répété 10 fois, il produit des estimations très instables (de 2 M à 4,7 M d'habitants) avec des marges d'erreur dépassant parfois 2 millions — parce qu'une commune de 200 habitants a autant de chances d'être tirée qu'une ville de 100 000. Le <strong>sondage stratifié</strong> corrige ce biais en découpant les communes en 4 strates selon les quartiles de population (< 272 hab., 272–537, 537–1173, > 1173), puis en tirant proportionnellement dans chaque strate. Les résultats sont nettement plus stables et les marges d'erreur significativement réduites.</p>
+
+  <p>La seconde partie porte sur une enquête auprès de 375 étudiants (76 variables qualitatives). Des <strong>tests du khi-deux</strong> ont été réalisés entre la variable <em>sport</em> et sept variables de mode de vie. Trois relations significatives (p < 0,01) ont été identifiées : le sexe (V de Cramer = 0,183), le département de formation (0,225), et surtout <strong>l'alimentation</strong> (V = 0,245) — la liaison la plus forte, montrant que les étudiants attentifs à leur alimentation pratiquent davantage le sport.</p>
+
+  <p>Techniquement, le projet a nécessité un nettoyage préalable des données (suppression des espaces non-ASCII dans les effectifs via <code>gsub("[^0-9]", ...)</code>), l'implémentation manuelle de la formule de variance stratifiée, et l'export automatisé des 10 répétitions en fichiers Excel via <code>writexl</code> pour produire les graphiques comparatifs.</p>
+
+  <p>Ce projet m'a permis de comprendre concrètement l'importance du <strong>choix méthodologique en sondage</strong> : une mauvaise méthode sur une population hétérogène produit des résultats inutilisables, même avec un code correct. C'est aussi ma première expérience complète du pipeline inférentiel sous R, de l'import de données brutes jusqu'à la production de conclusions argumentées.</p>
+  `,
+  techs: ["R", "Statistique", "Échantillonnage stratifié", "Excel",],
+  cover: "assets/projet/but-sd1/Sae_echantillon/couverture.png",
+  photos: [
+    {src: "assets/projet/but-sd1/Sae_echantillon/introducation.png", caption: "introduction"},
+    {src: "assets/projet/but-sd1/Sae_echantillon/graphique_sas.png", caption: "Estimations - sondage aléatoire simple (10 tirages)"},
+    {src: "assets/projet/but-sd1/Sae_echantillon/graphique_stratifie.png", caption: "Estimations — sondage stratifié (10 tirages)"},
+    {src: "assets/projet/but-sd1/Sae_echantillon/tableau_resultats.png", caption: "Tableau récapitulatif des résultats (Tableau khi-deux et V de Cramer) "},
+  ],
+  github: null,
+  download: "assets/projet/but-sd1/Sae_echantillon/Sae echantillonnage Alix GOURIET Nathan MICHONNEAU.pdf",
+  downloadLabel: "Télécharger le rapport (.pdf)",
   },
 
   {
