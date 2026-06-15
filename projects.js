@@ -56,7 +56,7 @@ const PROJECTS = [
       {src: "assets/projet/but-sd1/Sae_final/carte.png", caption: "Carte interactive Folium"},
       {src: "assets/projet/but-sd1/Sae_final/graphiques.png", caption: "Graphiques Plotly"},
       {src: "assets/projet/but-sd1/Sae_final/import.png", caption: "Module d'import Excel"},
-      {src: "assets/projet/but-sd1/Sae_final/CRUD.png", caption: "Pages CRUD"},
+      {src: "assets/projet/but-sd1/Sae_final/crud.png", caption: "Pages CRUD"},
     ],
     github: "https://github.com/nathanmichonneau/mycotrack",
     liveUrl: "https://mycotrack-eaqnpv2co69xfuzkegncqy.streamlit.app/",
@@ -88,7 +88,7 @@ const PROJECTS = [
     techs: ["R", "Statistiques", "Excel"],
     cover: "assets/projet/but-sd1/Sae_echantillon/couverture.png",
     photos: [
-      {src: "assets/projet/but-sd1/Sae_echantillon/introducation.png", caption: "Introduction"},
+      {src: "assets/projet/but-sd1/Sae_echantillon/introduction.png", caption: "Introduction"},
       {src: "assets/projet/but-sd1/Sae_echantillon/graphique_sas.png", caption: "Estimations - sondage aléatoire simple (10 tirages)"},
       {src: "assets/projet/but-sd1/Sae_echantillon/graphique_stratifie.png", caption: "Estimations — sondage stratifié (10 tirages)"},
       {src: "assets/projet/but-sd1/Sae_echantillon/tableau_resultats.png", caption: "Tableau récapitulatif des résultats"},
