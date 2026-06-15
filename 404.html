@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page introuvable · Nathan MICHONNEAU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#f0f4ff;--surface:#e8eeff;--card:#ffffff;--border:#c0d0f0;--accent:#1a4fcc;--accent2:#4a2ecc;--text:#0d1a33;--muted:#5a6a8a;--radius:12px;}
+    [data-theme="dark"]{--bg:#040810;--surface:#080e1a;--card:#0c1220;--border:#162040;--accent:#1a6bff;--accent2:#5b3dff;--text:#e2e8f0;--muted:#4a6080;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+    .err-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,20vw,14rem);line-height:1;-webkit-text-stroke:2px var(--accent);color:transparent;letter-spacing:.06em;}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.5rem,4vw,2.5rem);letter-spacing:.06em;margin-bottom:1rem;}
+    p{color:var(--muted);margin-bottom:2.5rem;max-width:40ch;line-height:1.7;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:.4rem;font-size:.875rem;font-weight:500;font-family:'Outfit',sans-serif;text-decoration:none;background:var(--accent);color:#fff;transition:all .3s;}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(26,79,204,.4);}
+    nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(240,244,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    [data-theme="dark"] nav{background:rgba(4,8,16,.85);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.12em;color:var(--accent);text-decoration:none;}
+    .theme-toggle{background:none;border:1px solid var(--border);color:var(--muted);padding:.4rem .7rem;border-radius:.4rem;font-size:.82rem;cursor:pointer;font-family:'Outfit',sans-serif;}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">NM</a>
+    <button class="theme-toggle" id="themeBtn">☾</button>
+  </nav>
+  <div class="err-num">404</div>
+  <h1>Page introuvable</h1>
+  <p>Cette page n'existe pas ou a été déplacée. Retournez à l'accueil pour continuer.</p>
+  <a href="index.html" class="btn">← Retour à l'accueil</a>
+  <script>
+    const themeBtn=document.getElementById('themeBtn'),html=document.documentElement;
+    const saved=localStorage.getItem('theme')||'light';
+    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀️':'☾';
+    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀️':'☾';});
+  </script>
+</body>
+</html>

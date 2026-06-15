@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Compétences techniques et soft skills de Nathan MICHONNEAU : Python, SQL, R, data visualisation et plus."/>
+  <meta property="og:title" content="Compétences — Nathan MICHONNEAU"/>
+  <meta property="og:description" content="Compétences techniques et soft skills de Nathan MICHONNEAU : Python, SQL, R, data visualisation et plus."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://nathanmichonneau.github.io/competences.html"/>
   <title>Nathan MICHONNEAU - Compétences</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
@@ -67,10 +72,25 @@
     footer span{color:var(--accent);}
     @media(max-width:768px){
       nav{padding:1rem 1.5rem;}.nav-links{gap:1.2rem;}
-      .nav-links li:nth-child(3),.nav-links li:nth-child(4){display:none;}
+      /* Nav links hidden on mobile — hamburger menu used instead */
       .page-hero,.content-section{padding-left:1.5rem;padding-right:1.5rem;}
       .skills-full-grid{grid-template-columns:1fr;}
       footer{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+
+    /* ── HAMBURGER MENU MOBILE ── */
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:600;}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:400;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.1em;color:var(--text);text-decoration:none;transition:color .2s;}
+    .mobile-menu a:hover{color:var(--accent);}
+    @media(max-width:768px){
+      .hamburger{display:flex;}
+      .nav-links{display:none !important;}
     }
   </style>
 </head>
@@ -87,8 +107,16 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeBtn">☾</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-transition">Accueil</a>
+    <a href="apropos.html" class="nav-transition">À propos</a>
+    <a href="competences.html" class="nav-transition">Compétences</a>
+    <a href="projets.html" class="nav-transition">Projets</a>
+    <a href="contact.html" class="nav-transition">Contact</a>
+  </div>
 
   <div class="page-hero">
     <div class="page-hero-label">02 — Compétences</div>
@@ -119,7 +147,7 @@
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Communication</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Capacité d'adaptation</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Autonomie</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
-        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Ouvert d'ésprit</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Ouvert d'esprit</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Curieux</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
       </div>
     </div>
@@ -160,8 +188,8 @@
     document.querySelectorAll('.skill-block,.tools-grid').forEach(el=>barObs.observe(el));
     const themeBtn=document.getElementById('themeBtn'),html=document.documentElement;
     const saved=localStorage.getItem('theme')||'light';
-    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀':'☾';
-    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀':'☾';});
+    html.setAttribute('data-theme',saved);themeBtn.textContent=saved==='dark'?'☀️':'☾';
+    themeBtn.addEventListener('click',()=>{const c=html.getAttribute('data-theme'),n=c==='dark'?'light':'dark';html.setAttribute('data-theme',n);localStorage.setItem('theme',n);themeBtn.textContent=n==='dark'?'☀️':'☾';});
   </script>
 </body>
 </html>
